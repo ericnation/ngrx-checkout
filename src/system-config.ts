@@ -3,10 +3,34 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  /* ngrx/router begin */
+  '@ngrx': 'vendor/@ngrx',
+  'path-to-regexp': 'vendor/path-to-regexp',
+  'isarray': 'vendor/isarray',
+  'query-string': 'vendor/query-string',
+  'strict-uri-encode': 'vendor/strict-uri-encode',
+  'object-assign': 'vendor/object-assign'
+  /* ngrx/router end */
 };
 
 /** User packages configuration. */
 const packages: any = {
+  /* ngrx/router begin */
+  '@ngrx/core': {
+    main: 'index.js',
+    format: 'cjs'
+  },
+  '@ngrx/store': {
+    main: 'index.js',
+    format: 'cjs'
+  },
+  '@ngrx/router': { main: 'index' },
+  'path-to-regexp': { main: 'index' },
+  'isarray': { main: 'index' },
+  'query-string': { main: 'index' },
+  'strict-uri-encode': { main: 'index' },
+  'object-assign': { main: 'index' }
+  /* ngrx/router end */
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
