@@ -1,0 +1,25 @@
+
+/*===============================
+  INK Font Styles
+---------------------------------*/
+
+$fontFamily: "Open Sans", Arial, sans-serif;
+$defaultFontSize: 14px;
+$baseLineHeight: 1.4;
+$baseSpacingUnit: $baseLineHeight;
+$light: 300;
+$regular: 400;
+$semiBold: 600;
+$bold: 700;
+
+/*===============================
+  INK Shared Styles
+---------------------------------*/
+
+$globalBorderRadius: 3px;
+$globalBoxShadow: 0 2px 0 rgba(0,0,0,.06);
+
+$componentMarginBottomSmall: 10px;
+$componentMarginBottom: 20px;
+$componentMarginBottomLarge: 30px;
+$componentMarginBottomXL: 50px;

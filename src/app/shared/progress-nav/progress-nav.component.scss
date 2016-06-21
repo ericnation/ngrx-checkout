@@ -1,0 +1,103 @@
+@import "../../../app/assets/styles/settings/variables";
+@import "../../../app/assets/styles/settings/color-palette";
+@import '../../../app/assets/styles/tools/mixins';
+
+// referenced http://www.kodhus.com/css-only-step-progress-bar/ for building this component
+
+.step-progress-nav {
+  left: -42px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: -35px;
+  width: 110%;
+
+  @include apply-to("max-width", 768px) {
+    top: -15px;
+    left: -38px;
+  }
+
+  @include apply-to("max-width", 530px) {
+    left: -24px;
+    width: 113%;
+  }
+
+  li {
+    color: $gray3;
+    float: left;
+    font-weight: 500;
+    @include font-size(11px);
+    list-style-type: none;
+    position: relative;
+    text-align: center;
+    width: 20%;
+
+    @include apply-to("min-width", 600px) {
+      @include font-size(12px);
+    }
+  }
+
+  /* styles for circles */
+  li:before {
+    background-color: $gray6;
+    @include border-radius(50%);
+    content: ' ';
+    display: block;
+    line-height: 19px;
+    height: 19px;
+    margin: 10px auto;
+    position: relative;
+    text-align: center;
+    top: 58px;
+    width: 19px;
+
+    @include apply-to("max-width", 668px) {
+      top: 64px;
+    }
+  }
+
+  /* styles for lines in between circles */
+  li:after {
+    background-color: $gray6;
+    content: '';
+    height: 5px;
+    left: -50%;
+    position: absolute;
+    top: 75px;
+    width: 100%;
+    z-index: -1;
+
+    @include apply-to("max-width", 668px) {
+      top: 81px;
+    }
+  }
+
+  li:first-child:after {
+    content: none;
+  }
+
+  li.active {
+    color: $gray2;
+    font-weight: $semiBold;
+  }
+
+  li.disabled {
+    cursor: none;
+  }
+
+  li.completed {
+    color: $accent-color;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  li.active:before, li.completed:before {
+    background-color: $accent-color;
+  }
+
+  li.completed + li:after {
+    background-color: $accent-color;
+  }
+}

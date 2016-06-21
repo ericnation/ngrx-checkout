@@ -1,0 +1,31 @@
+.vertical-divider {
+  border-right: 1px solid #eaeaea;
+  display: inline-block;
+  height: 100%;
+  margin: 0 5px;
+  position: relative;
+  
+  &.no-margin{
+    margin:0px;
+  }
+}
+.horiz-divider {
+  position: relative;
+  &:before {
+    border-bottom: 1px solid $gray6;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 40%;
+  }
+
+  &:after {
+    border-bottom: 1px solid $gray6;
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 40%;
+  }
+}

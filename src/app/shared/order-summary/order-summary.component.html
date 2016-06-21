@@ -1,3 +1,63 @@
-<p>
-  order-summary works!
-</p>
+<div class="card">
+  <form>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item continue-btn-wrap">
+        <button class="btn btn-brand-primary btn-lg btn-block order-summary-nextstep-btn" id="orderSummaryNextStepBtn">Continue</button>
+        <p class="x-small-text text-xs-center m-b-0">You will have a chance to review your order before its final.</p>
+      </li>
+      <li class="list-group-item order-summary-info-wrap">
+        <div class="order-summary-info-header clearfix">
+          <h4 class="heading-3">Order Summary</h4>
+          <a href="" class="btn btn-secondary btn-sm pull-xs-right">Edit Cart</a>
+        </div>
+        <table class="table table-sm no-borders order-summary-info-table">
+          <tr>
+            <td>Total Quantity</td>
+            <td class="text-xs-right">2</td>
+          </tr>
+          <tr>
+            <td>Item Subtotal</td>
+            <td class="text-xs-right">$35.00</td>
+          </tr>
+          <tr>
+            <td>Shipping and Handling</td>
+            <td class="text-xs-right">---</td>
+          </tr>
+          <tr>
+            <td>Estimated Tax</td>
+            <td class="text-xs-right">---</td>
+          </tr>
+        </table>
+        <div class="coupon-code-wrap clearfix" *ngIf="couponcodes">
+          <div class="pull-xs-left coupon-code-col">
+            <span class="icon icon-close-alt" (click)="removeCouponCode(code)"></span>
+            <span class="small-text coupon-code">SAVE25</span>
+          </div>
+          <div class="pull-xs-right coupon-code-discount-col">
+            <span class="text-success m-b-0 small-text">-$11.50</span>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item order-summary-coupons-wrap">
+        <a (click)="showCouponForm()" *ngIf="!couponCodeFormVisible">Apply Coupon / Gift Certificate</a>
+        <div class="form-group" *ngIf="couponCodeFormVisible">
+          <label for="couponcode" class="input-label">Apply Coupon / Gift Certificate</label>
+          <div class="input-group" >
+            <input type="text" id="couponcode" class="form-control" #couponcode="ngForm" ngControl="couponcode" >
+            <span class="input-group-btn">
+              <button (click)="applyCouponCode()" class="btn btn-secondary">Apply</button>
+            </span>
+          </div>
+        </div>
+
+      </li>
+      <li class="list-group-item order-total-wrap clearfix">
+        <h3 class="heading-2 m-b-0">Order Total</h3>
+        <span class="total-price-wrap pull-xs-right">
+          <span class="x-small-text currency-text">USD</span>
+          <h3 class="heading-2 m-b-0 text-xs-right">$40.00</h3>
+        </span>
+      </li>
+    </ul>
+  </form>
+</div>

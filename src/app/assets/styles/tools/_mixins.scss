@@ -1,0 +1,133 @@
+
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+ * single value, e.g.:
+ *
+   `@include font-size(10px);`
+ *
+ * Thanks to @redclov3r for the `line-height` Sass:
+ * twitter.com/redclov3r/status/250301539321798657
+ */
+@mixin font-size($font-size, $line-height:false){
+  font-size:$font-size;
+  font-size:($font-size / $defaultFontSize)*1rem;
+  @if $line-height == true{
+    line-height:ceil($font-size / $baseLineHeight) * ($baseLineHeight / $font-size);
+  }
+}
+
+// Browser Prefix Mixin
+@mixin prefix($prop, $value, $prefixes...) {
+  @each $prefix in $prefixes {
+    @if($prefix != spec) {
+      -#{$prefix}-#{$prop}: $value;
+    }
+    @if($prefix == spec) {
+      #{$prop}: $value;
+    }
+  }
+}
+
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+// Arrow Down
+@mixin arrow-down($color, $size) {
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+  height: 0;
+  width: 0;
+}
+
+// Arrow Up
+@mixin arrow-up($color, $size) {
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-bottom: $size solid $color;
+  height: 0;
+  width: 0;
+}
+
+// Arrow Right
+@mixin arrow-right($color, $size) {
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-left: $size solid $color;
+  height: 0;
+  width: 0;
+}
+
+// Arrow Left
+@mixin arrow-left($color, $size) {
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-right: $size solid $color;
+  height: 0;
+  width: 0;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Vertically Align
+@mixin vertically-align {
+  @include prefix(transform, (-50%), webkit, moz, ms, spec);
+  position: relative;
+  top: 50%;
+}
+
+// Border Radius
+@mixin border-radius($values) {
+  @include prefix(border-radius, ($values), webkit, moz, ms, spec);
+  @include prefix(background-clip, padding-box, webkit, moz, ms, spec);
+}
+
+// Transition
+@mixin transition($value) {
+  @include prefix(transition, ($value), webkit, moz, ms, spec);
+}
+
+// Transform
+@mixin transform($value) {
+  @include prefix(transform, ($value), webkit, moz, ms, spec);
+}
+
+// Box Shadow
+@mixin box-shadow($shadow1, $shadow2:false, $shadow3:false, $shadow4:false, $shadow5:false) {
+  $params: $shadow1;
+  @if $shadow2
+  { $params: $shadow1, $shadow2; }
+  @if $shadow3 != false
+  { $params: $shadow1, $shadow2, $shadow3; }
+  @if $shadow4 != false
+  { $params: $shadow1, $shadow2, $shadow3, $shadow4; }
+  @if $shadow5 != false
+  { $params: $shadow1, $shadow2, $shadow3, $shadow4, $shadow5; }
+
+  @include prefix(box-shadow, $params, webkit, moz, ms, spec);
+}
+
+// Drop Shadow
+@mixin drop-shadow($color:rgba(0,0,0,0.2), $blur:0, $x:0, $y:0) { // color, blur, x, y
+  @include prefix(box-shadow, ($x $y $blur $color), webkit, moz, ms, spec);
+}
+
+// Media Query
+@mixin apply-to($ltgt, $width){
+  @media only screen and (#{$ltgt}: $width){
+    @content;
+  }
+}

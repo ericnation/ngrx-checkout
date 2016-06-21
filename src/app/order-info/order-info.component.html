@@ -1,3 +1,41 @@
-<p>
-  order-info works!
-</p>
+<div class="card">
+  <form [ngFormModel="orderInfoForm" (ngSubmit)="submitOrderInfoForm()">
+    <div class="card-block">
+      <h4 class="card-title">Order Info</h4>
+      <p class="paragraph-text required-text"><span class="text-danger">*</span> = Required Field</p>
+
+      <div class="form-group">
+        <label for="email" class="input-label" [class.invalid]="!email.valid && email.touched">Email Address <span class="text-danger">*</span></label>
+        <p class="paragraph-text sub-label">Your order confirmation will be emailed to this address</p>
+        <div class="validation-wrap">
+          <input class="form-control"
+                 [class.ng-invalid]="!email.valid"
+                 type="email" name="email"
+                 id="email"
+                 ngControl="email"
+                 #email="ngForm"
+                 [(ngModel)]="cart.email"
+                 required />
+          <span class="input-valid" *ngIf="email.valid"><span class="icon icon-checkmark"></span></span>
+          <div *ngIf="email.touched && email.errors">
+            <span class="form-error-tab" *ngIf="email.errors.required">Email address required</span>
+          </div>
+        </div>
+        <p class="small-text">Already have an account? <a (click)="showLoginForm()">Log In</a></p>
+      </div>
+      <hr class="divider-horz m-b-2 m-t-2"/>
+      <div class="form-group">
+        <label for="giftmessage" class="input-label">Gift Message <span class="text-muted small-text">(optional)</span></label>
+        <p class="paragraph-text sub-label">This message will show on the gift receipt</p>
+          <textarea class="form-control"
+                    name="giftmessage"
+                    id="giftmessage"
+                    rows="3"
+                    ngControl="giftmessage"
+                    #giftmessage="ngForm"
+                    [(ngModel)]="cart.giftmessage">
+          </textarea>
+      </div>
+    </div>
+  </form>
+</div>

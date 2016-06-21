@@ -1,0 +1,258 @@
+.input-label {
+  color: $gray1;
+  font-weight: $semiBold;
+  @include font-size(14px);
+  margin-bottom: 5px;
+
+  &.invalid {
+    color: $red;
+  }
+
+  &.radio {
+    font-weight: 600;
+    padding-left: 1.5rem;
+  }
+
+  &--small {
+    @include font-size(12px);
+  }
+}
+
+.form-row {
+
+  .form-col-2 {
+    float: left;
+    margin-right: 0;
+    width: 100%;
+
+    @include apply-to("min-width", 600px) {
+      width: 21.7%;
+    }
+
+    @include apply-to("min-width", 768px) {
+      width: 100%;
+    }
+
+    @include apply-to("min-width", 900px) {
+      width: 21.7%;
+    }
+
+  }
+
+  .form-col-5 {
+    float: left;
+    margin-right: 10px;
+    width: 100%;
+
+    @include apply-to("min-width", 600px) {
+      width: 37%;
+    }
+
+    @include apply-to("min-width", 768px) {
+      width: 100%;
+    }
+    @include apply-to("min-width", 900px) {
+      width: 37%;
+    }
+  }
+
+  .form-col-6 {
+    float: left;
+    width: 100%;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    @include apply-to("min-width", 600px) {
+      width: 48.9%;
+    }
+
+    @include apply-to("min-width", 768px) {
+      width: 100%;
+    }
+    @include apply-to("min-width", 900px) {
+      width: 48.9%;
+    }
+  }
+
+
+}
+
+.form-group {
+  position: relative;
+
+  &.radio-active {
+    border: 1px solid $gray6;
+    @include border-radius($globalBorderRadius);
+    padding: 15px;
+  }
+}
+
+.radio-panel__header {
+  &.active {
+    background: #fff;
+    @include border-radius($globalBorderRadius $globalBorderRadius 0 0);
+    margin: -20px -15px;
+    padding: 15px;
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+  }
+
+  & > .form-group {
+    margin-bottom: 0;
+  }
+
+}
+
+.radio-panel__content {
+  background: $gray7;
+  @include border-radius(0 0 $globalBorderRadius $globalBorderRadius);
+  margin: 0 -15px -15px;
+  padding: 20px;
+  position: relative;
+}
+
+.radio-panel {
+  border-bottom: 1px solid $gray6;
+  padding: 1.3rem 0;
+  position: relative;
+
+  &.active {
+    background: $gray7;
+    border: 1px solid $gray6;
+    @include border-radius($globalBorderRadius);
+    top: -2px;
+
+    &:last-child {
+      border-bottom: 1px solid $gray6;
+    }
+  }
+
+  & > .form-group {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.form-control {
+  border: 1px solid $gray5;
+  @include border-radius($globalBorderRadius);
+  color: $gray2;
+  @include font-size(14px);
+  margin-bottom: 3px;
+  padding: .59rem .75rem;
+
+  &.ng-invalid.ng-dirty {
+    border: 1px solid $red;
+  }
+}
+
+.sub-label {
+  margin-bottom: 3px;
+  position: relative;
+  top: -2px;
+}
+
+.validation-wrap  {
+  position: relative;
+
+  .form-error-tab {
+    background: $red;
+    @include border-radius(0 0 $globalBorderRadius $globalBorderRadius);
+    color: #fff;
+    @include font-size(12px);
+    font-weight: $semiBold;
+    padding: 2px 18px;
+    position: absolute;
+    right: 1px;
+    bottom: -21px;
+  }
+
+  .input-valid {
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+
+    .icon-checkmark {
+      color: $green;
+      font-size: 1.4em;
+    }
+  }
+}
+
+.input-tooltip-icon {
+  color: $gray5;
+  bottom: 7px;
+  position: absolute;
+  right: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.checkbox label input:only-child, .radio label input:only-child {
+  position: absolute;
+}
+
+.select-wrap {
+  @include box-shadow(none);
+  @include border-radius($globalBorderRadius);
+  background: #fff;
+  border: 1px solid $gray5;
+  clear: both;
+  height: 42px;
+  @include font-size(14px);
+  margin-bottom: -1px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  select {
+    @include border-radius($globalBorderRadius);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
+    color: $gray2;
+    height: 42px;
+    outline: 0;
+    padding: .59rem .75rem;
+    position: relative;
+    width: 100%;
+    z-index: 50; // Has to be greather than the select arrow
+  }
+
+  .select-arrow {
+    background: #fff;
+    height: 103%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    z-index: 40;
+
+    .arrow-down {
+      @include arrow-down($gray4, 5px);
+      left: 50%;
+      margin: -3px 0 0 -6px;
+      position: absolute;
+      top: 50%;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}

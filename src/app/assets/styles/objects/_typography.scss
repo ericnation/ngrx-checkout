@@ -1,0 +1,70 @@
+
+.heading-1 {
+  font-weight: $bold;
+  @include font-size(24px);
+  color: $gray1;
+}
+
+.heading-2 {
+  font-weight: $bold;
+  @include font-size(18px);
+  color: $gray1;
+}
+
+.heading-3 {
+  font-weight: $bold;
+  @include font-size(16px);
+  color: $gray1;
+}
+
+.large-text {
+  font-weight: $regular;
+  @include font-size(18px);
+  color: $gray2;
+}
+
+.paragraph-text {
+  font-weight: $regular;
+  @include font-size(14px);
+  color: $gray2;
+}
+
+.small-text {
+  font-weight: $regular;
+  @include font-size(12px);
+}
+
+.x-small-text {
+  font-weight: $regular;
+  @include font-size(11px);
+  line-height: 1.3;
+  color: $gray2;
+}
+
+a {
+  @include transition(all .2s linear);
+  text-decoration: none;
+  color: $accent-color;
+
+  &:hover {
+    color: lighten($accent-color, 15%);
+    text-decoration: none;
+  }
+
+}
+
+.required-text {
+  color: $gray4;
+  display: inline-block;
+  float: right;
+  @include font-size(12px);
+  margin-bottom: 0;
+
+  span {
+    @include font-size(16px);
+  }
+}
+.font-weight-normal{
+  font-weight: normal;
+}
+

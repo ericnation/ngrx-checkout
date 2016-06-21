@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Displays
+   ========================================================================== */
+.center-block-horiz {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+}
+/* ==========================================================================
+   Text Colors
+   ========================================================================== */
+
+.green {
+  color: $green;
+}
+.red {
+  color: $red;
+}
+.text-muted {
+  color: $gray4!important;
+}
+/* ==========================================================================
+   Object spacing
+   ========================================================================== */
+
+.m-a-half {margin: .5rem;}
+.m-b-half {margin-bottom: .5rem;}
+.m-l-half {margin-left: .5rem;}
+.m-r-half {margin-right: .5rem;}
+.m-t-half {margin-top: .5rem;}
+.p-a-half {padding: .5rem;}
+.p-b-half {padding-bottom: .5rem;}
+.p-l-half {padding-left: .5rem;}
+.p-r-half {padding-right: .5rem;}
+.p-t-half {padding-top: .5rem;}
+.p-x-4 {
+  padding: 0 4rem;
+}
+/* ==========================================================================
+   Object Positioning
+   ========================================================================== */
+
+.centered {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.text-centered {
+  text-align: center
+}
+.text-left {
+  text-align: left
+}
+.text-middle{
+  vertical-align: middle;
+}
+.text-right {
+  text-align: right
+}
+
+.horiz-divider {
+  position: relative;
+  &:before {
+    border-bottom: 1px solid $gray6;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 40%;
+  }
+
+  &:after {
+    border-bottom: 1px solid $gray6;
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 40%;
+  }
+}
+
+/* ==================================
+    Hiding and showing for mobile
+   ================================= */
+
+
+.hide-mobile-750 {
+  @include apply-to("max-width", 750px) {
+    display: none;
+  }
+}
+      
