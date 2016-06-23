@@ -56,7 +56,9 @@
 
 .previous-step-link {
   color: $accent-color;
+  display: block;
   @include font-size(14px);
+  padding: 6px 0;
   text-decoration: none;
 
   .icon {

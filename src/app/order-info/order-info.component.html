@@ -1,5 +1,5 @@
 <div class="card">
-  <form [ngFormModel="orderInfoForm" (ngSubmit)="submitOrderInfoForm()">
+  <form [ngFormModel]="orderInfoForm" (ngSubmit)="submitOrderInfoForm()">
     <div class="card-block">
       <h4 class="card-title">Order Info</h4>
       <p class="paragraph-text required-text"><span class="text-danger">*</span> = Required Field</p>
@@ -16,7 +16,7 @@
                  #email="ngForm"
                  [(ngModel)]="cart.email"
                  required />
-          <span class="input-valid" *ngIf="email.valid"><span class="icon icon-checkmark"></span></span>
+          <span class="input-valid" *ngIf="email.valid"><i class="fa fa-check-circle-o"></i></span>
           <div *ngIf="email.touched && email.errors">
             <span class="form-error-tab" *ngIf="email.errors.required">Email address required</span>
           </div>
@@ -35,6 +35,16 @@
                     #giftmessage="ngForm"
                     [(ngModel)]="cart.giftmessage">
           </textarea>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 previous-step-link-wrap">
+          <a href="" class="previous-step-link" id="backToShoppingCartBtn"><i class="fa fa-long-arrow-left"></i> Back to Shopping Cart</a>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <button type="submit" class="btn btn-primary next-step-btn pull-sm-right" id="continueShippingInfoBtn" [disabled]="!orderInfoForm.valid"> Continue to Shipping</button>
+        </div>
       </div>
     </div>
   </form>

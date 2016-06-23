@@ -1,0 +1,9 @@
+.table {
+
+  &.no-borders {
+    tr, td, th, tbody, thead {
+      border: none;
+    }
+  }
+
+}

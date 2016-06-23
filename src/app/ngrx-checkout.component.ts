@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import {HeaderComponent} from "./shared/header/header.component";
-import {OrderSummaryComponent} from "./shared/order-summary/order-summary.component";
-import {ProgressNavComponent} from "./shared/progress-nav/progress-nav.component";
+import { HeaderComponent } from "./shared/header/header.component";
+import { OrderSummaryComponent } from "./shared/order-summary/order-summary.component";
+import { ProgressNavComponent } from "./shared/progress-nav/progress-nav.component";
+import { OrderInfoComponent } from "./order-info/order-info.component";
+import { ShippingInfoComponent } from "./shipping-info/shipping-info.component";
 
 @Component({
   moduleId: module.id,
@@ -11,9 +13,13 @@ import {ProgressNavComponent} from "./shared/progress-nav/progress-nav.component
   directives: [
     HeaderComponent,
     OrderSummaryComponent,
-    ProgressNavComponent
+    ProgressNavComponent,
+    OrderInfoComponent,
+    ShippingInfoComponent
   ]
 })
+
 export class NgrxCheckoutAppComponent {
   title = 'ngrx-checkout works!';
+
 }

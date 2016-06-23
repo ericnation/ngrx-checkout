@@ -1,0 +1,68 @@
+.btn {
+  @include border-radius($globalBorderRadius);
+  @include transition(all .2s linear);
+  @include font-size(14px);
+  line-height: 1.4;
+  font-weight: 500;
+  padding: .475rem 1.3rem;
+  position: relative;
+}
+
+.btn-lg {
+  padding: .75rem 1.25rem;
+}
+
+a.btn.disabled {
+  cursor: not-allowed;
+  pointer-events: auto;
+
+}
+
+
+.btn-brand-primary {
+  background: $brand-primary;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.7);
+  border: solid 1px #e65350;
+  color: #fff;
+  font-weight: 400;
+
+  &:hover, &:focus, &:active {
+    background: darken($brand-primary, 8%);
+    color: #fff;
+  }
+}
+
+.btn-brand-primary:disabled:hover {
+  background: darken($brand-primary, 0%);
+}
+
+
+.btn-secondary {
+  background: $gray7;
+  border: 1px solid $gray5;
+  color: $gray2;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  -moz-box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+}
+
+.btn-group-sm>.btn, .btn-sm {
+  padding: 5px 7px;
+  @include font-size(12px);
+}
+
+.next-step-btn {
+  min-width: 180px;
+
+  @include apply-to("max-width", 768px) {
+    display: none;
+  }
+}
+
+.btn-xs-block {
+  @include apply-to("max-width", 420px) {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
