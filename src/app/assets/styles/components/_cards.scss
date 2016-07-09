@@ -26,6 +26,7 @@
 }
 
 .card-title {
+  display: inline-block;
   @include font-size(24px);
   margin-bottom: 35px;
 }

@@ -208,7 +208,6 @@
   background: #fff;
   border: 1px solid $gray5;
   clear: both;
-  height: 42px;
   @include font-size(14px);
   margin-bottom: -1px;
   position: relative;
@@ -222,7 +221,7 @@
     background: transparent;
     border: none;
     color: $gray2;
-    height: 42px;
+    line-height: 1.25;
     outline: 0;
     padding: .59rem .75rem;
     position: relative;
