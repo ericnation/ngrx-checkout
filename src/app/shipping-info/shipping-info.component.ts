@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
+import { Router } from '@ngrx/router';
 
 @Component({
   moduleId: module.id,
@@ -26,7 +27,7 @@ export class ShippingInfoComponent implements OnInit {
     { id: 3, state: 'Colorado' }
   ];
 
-  constructor() {
+  constructor(private router: Router) {
 
 
   }
@@ -36,6 +37,10 @@ export class ShippingInfoComponent implements OnInit {
 
   saveAddress(form) {
     console.log(form);
+  }
+
+  backToOrderInfo() {
+    this.router.go('/order-info');
   }
 
 }
