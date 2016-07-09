@@ -1,3 +1,20 @@
+select:focus {
+  outline: none;
+}
+
+select::-moz-focus-inner {
+  border: 0;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+}
+
+select:-moz-focusring {
+  color: transparent!important;
+  text-shadow: 0 0 0 #000!important;
+}
+
 .input-label {
   color: $gray1;
   font-weight: $semiBold;
@@ -255,3 +272,4 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
 }
+
