@@ -1,5 +1,5 @@
 <div class="card">
-  <form>
+  <form #f="ngForm">
     <ul class="list-group list-group-flush">
       <li class="list-group-item continue-btn-wrap">
         <button class="btn btn-primary btn-lg btn-block" id="orderSummaryNextStepBtn">Continue</button>
@@ -43,7 +43,7 @@
         <div class="form-group" *ngIf="couponCodeFormVisible">
           <label for="couponcode" class="input-label">Apply Coupon / Gift Certificate</label>
           <div class="input-group" >
-            <input type="text" id="couponcode" class="form-control" #couponcode="ngForm" ngControl="couponcode" >
+            <input type="text" id="couponcode" class="form-control" #couponcode name="couponcode">
             <span class="input-group-btn">
               <button (click)="applyCouponCode()" class="btn btn-secondary">Apply</button>
             </span>

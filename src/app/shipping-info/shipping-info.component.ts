@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FORM_DIRECTIVES } from '@angular/common';
+import { NgForm } from '@angular/forms';
 import { Router } from '@ngrx/router';
 
 @Component({
   moduleId: module.id,
   selector: 'app-shipping-info',
   templateUrl: 'shipping-info.component.html',
-  styleUrls: ['shipping-info.component.css'],
-  directives: [
-    FORM_DIRECTIVES
-  ]
+  styleUrls: ['shipping-info.component.css']
 })
 export class ShippingInfoComponent implements OnInit {
 
   addressFormValid = true;
+  address = {
+
+  };
 
   countries = [
     { id: 1, country: 'United States' },

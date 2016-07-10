@@ -11,7 +11,7 @@
               <label for="FirstName" class="input-label" [class.invalid]="!FirstName.valid && FirstName.touched">
                 First Name <span class="text-danger">*</span></label>
               <div class="validation-wrap">
-                <input type="text" class="form-control" id="FirstName" ngControl="FirstName" #FirstName="ngForm" required>
+                <input type="text" class="form-control" name="FirstName" id="FirstName" [(ngModel)]="address.FirstName" #FirstName="ngModel" required>
                 <span class="input-valid" *ngIf="FirstName.touched && FirstName.valid"><i class="fa fa-check-circle-o"></i></span>
                 <span class="form-error-tab" *ngIf="FirstName.touched && !FirstName.valid">First Name required</span>
               </div>
@@ -22,7 +22,7 @@
               <label for="LastName" class="input-label" [class.invalid]="!LastName.valid && LastName.touched">
                 Last Name <span class="text-danger">*</span></label>
               <div class="validation-wrap">
-                <input type="text" class="form-control" id="LastName" ngControl="LastName" #LastName="ngForm" required>
+                <input type="text" class="form-control" name="LastName" id="LastName" [(ngModel)]="address.LastName" #LastName="ngModel" required>
                 <span class="input-valid" *ngIf="LastName.touched && LastName.valid"><i class="fa fa-check-circle-o"></i></span>
                 <span class="form-error-tab" *ngIf="LastName.touched && !LastName.valid">Last name required</span>
               </div>
@@ -35,7 +35,7 @@
               <label for="Phone" class="input-label" [class.invalid]="!Phone.valid && Phone.touched">
                 Phone Number <span class="text-danger">*</span></label>
               <div class="validation-wrap">
-                <input type="text" class="form-control" id="Phone" ngControl="Phone" #Phone="ngForm" required>
+                <input type="text" class="form-control" name="Phone" id="Phone" [(ngModel)]="address.Phone" #Phone="ngModel" required>
                 <span class="form-error-tab" *ngIf="Phone.touched && !Phone.valid">Mut be a valid Phone Number</span>
                 <span class="form-error-tab" *ngIf="Phone.required">Phone Number required</span>
                 <span class="input-valid" *ngIf="Phone.valid"><i class="fa fa-check-circle-o"></i></span>
@@ -47,7 +47,7 @@
               <label for="CompanyName" class="input-label">
                 Company/Organization <span class="text-muted small-text">(optional)</span></label>
               <div class="validation-wrap">
-                <input type="text" class="form-control" id="CompanyName" ngControl="CompanyName" #CompanyName="ngForm">
+                <input type="text" class="form-control" name="CompanyName" id="CompanyName" [(ngModel)]="address.CompanyName" #CompanyName="ngModel">
               </div>
             </div>
           </div>
@@ -56,9 +56,9 @@
         <div class="form-row clearfix">
           <div class="form-col-6">
             <div class="form-group">
-              <label for="CountryId" class="input-label">Country</label>
+              <label for="Country" class="input-label">Country</label>
               <div class="select-wrap">
-                <select name="CountryId" id="CountryId" ngControl="CountryId" #CountryId="ngForm" required>
+                <select name="Country" id="Country" [(ngModel)]="address.Country" #Country="ngModel" required>
                   <option value="" selected>-- Select Country --</option>
                   <option *ngFor="let country of countries" [value]=country.ID>{{country.country}}</option>
                 </select>
@@ -76,7 +76,7 @@
               <label for="Street1" class="input-label" [class.invalid]="!Street1.valid && Street1.touched">
                 Address Line 1 <span class="text-danger">*</span></label>
               <div class="validation-wrap">
-                <input type="text" class="form-control" name="Street1" id="Street1" ngControl="Street1" #Street1="ngForm" required>
+                <input type="text" class="form-control" name="Street1" id="Street1" [(ngModel)]="address.Street1" #Street1="ngModel" required>
                 <span class="input-valid" *ngIf="Street1.touched && Street1.valid"><i class="fa fa-check-circle-o"></i></span>
                 <span class="form-error-tab" *ngIf="Street1.touched && !Street1.valid">Address required</span>
               </div>
@@ -87,7 +87,7 @@
           <div class="col-xs-12">
             <div class="form-group">
               <label for="Street2" class="input-label">Address Line 2</label>
-              <input type="text" class="form-control" name="Street2" id="Street2" ngControl="Street2" #Street2="ngForm">
+              <input type="text" class="form-control" name="Street2" id="Street2" [(ngModel)]="address.Street2" #Street2="ngModel">
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@
               <label for="City" class="input-label" [class.invalid]="!City.valid && City.touched">
                 City <span class="text-danger">*</span></label>
               <div class="validation-wrap">
-                <input type="text" class="form-control" id="City" ngControl="City" #City="ngForm" required>
+                <input type="text" class="form-control" name="City" id="City" [(ngModel)]="address.City" #City="ngModel" required>
                 <span class="input-valid" *ngIf="City.touched && City.valid"><i class="fa fa-check-circle-o"></i></span>
                 <span class="form-error-tab" *ngIf="City.touched && !City.valid">City required</span>
               </div>
@@ -106,9 +106,9 @@
           </div>
           <div class="form-col-5">
             <div class="form-group">
-              <label for="StateId" class="input-label">State <span class="text-danger">*</span></label>
+              <label for="State" class="input-label">State <span class="text-danger">*</span></label>
               <div class="select-wrap">
-                <select name="StateId" id="StateId" ngControl="StateId" #StateId="ngForm" required>
+                <select name="State" id="State" [(ngModel)]="address.State" #State="ngModel" required>
                   <option value="" selected>-- Select State --</option>
                   <option *ngFor="let state of states" [value]=state.ID>{{state.state}}</option>
                 </select>
@@ -122,7 +122,7 @@
             <div class="form-group">
               <label for="PostCode" class="input-label" [class.invalid]="!PostCode.valid && PostCode.touched">Zip Code <span class="text-danger">*</span></label>
               <div class="validation-wrap">
-                <input type="text" class="form-control" id="PostCode" name="PostCode" ngControl="PostCode" #PostCode="ngForm" required>
+                <input type="text" class="form-control" id="PostCode" name="PostCode" [(ngModel)]="address.PostCode" #PostCode="ngModel" required>
                 <span class="input-valid" *ngIf="PostCode.touched && PostCode.valid"><i class="fa fa-check-circle-o"></i></span>
                 <span class="form-error-tab" *ngIf="PostCode.touched && !PostCode.valid">Must be a Valid Zip Code</span>
               </div>
