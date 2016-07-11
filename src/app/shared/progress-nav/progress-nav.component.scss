@@ -47,6 +47,7 @@
     background-color: $gray6;
     @include border-radius(50%);
     content: ' ';
+    cursor: pointer;
     display: block;
     line-height: 19px;
     height: 19px;
