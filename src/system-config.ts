@@ -9,6 +9,7 @@ const map: any = {
   'isarray': 'vendor/isarray',
   'query-string': 'vendor/query-string',
   'strict-uri-encode': 'vendor/strict-uri-encode',
+  'lodash': 'vendor/lodash/lodash.js',
   'object-assign': 'vendor/object-assign'
   /* ngrx/router end */
 };

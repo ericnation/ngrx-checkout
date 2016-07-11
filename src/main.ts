@@ -6,6 +6,8 @@ import { NgrxCheckoutAppComponent, environment } from './app/';
 import { provideRouter } from '@ngrx/router';
 import routes from './app/routes';
 
+import 'lodash';
+
 if (environment.production) {
   enableProdMode();
 }
