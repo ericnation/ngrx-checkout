@@ -1,0 +1,33 @@
+import { Address } from "./Address";
+import { ShippingMethod } from "./ShippingMethod";
+import { GiftCertificate } from "./GiftCertificate";
+import { Discount } from "./Discount";
+import { ShoppingCartItem } from "./ShoppingCartItem";
+export interface ShoppingCart {
+  ID: number;
+  CartRequestId: string;
+  DefaultCountryId: number;
+  CartItemWeight: number;
+  TotalDue: number;
+  DiscountRetail: number;
+  DiscountShipping: number;
+  DiscountTax: number;
+  DiscountTotal: number;
+  QuantityDiscountAmount: number;
+  QuantityDiscountTax: number;
+  QuantityPricingPercentDiscount: number;
+  TaxAmount: number;
+  ItemTotal: number;
+  ShippingAmount: number;
+  Discount: Discount;
+  ItemCount: number;
+  CanCheckout: boolean;
+  ValidationMessage: string;
+  GiftCertificates: Array<GiftCertificate>;
+  Items: Array<ShoppingCartItem>;
+  ShippingAddress: Address;
+  BillingAddress: Address;
+  ShippingMethod: ShippingMethod;
+  GuestEmail: string;
+  GiftMessage: string;
+}
