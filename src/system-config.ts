@@ -62,6 +62,7 @@ const barrels: string[] = [
   'app/pages/shipping-info',
   'app/pages/shipping-method',
   'app/pages/payment-method',
+  'app/actions'
   /** @cli-barrel */
 ];
 
