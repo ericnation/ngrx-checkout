@@ -1,1 +1,5 @@
-export * from './actions';
+import { CheckoutProgressActions } from './actions';
+
+export default [
+  CheckoutProgressActions
+]

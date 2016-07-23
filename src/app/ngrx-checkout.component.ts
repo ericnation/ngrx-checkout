@@ -5,6 +5,7 @@ import { ProgressNavComponent } from "./shared/progress-nav/progress-nav.compone
 import { OrderInfoComponent } from "./pages/order-info/order-info.component";
 import { ShippingInfoComponent } from "./pages/shipping-info/shipping-info.component";
 import { ngrxCheckoutService } from './ngrx-checkout.service';
+import { StoreLogMonitorComponent } from '@ngrx/store-log-monitor';
 
 @Component({
   moduleId: module.id,
@@ -16,7 +17,8 @@ import { ngrxCheckoutService } from './ngrx-checkout.service';
     OrderSummaryComponent,
     ProgressNavComponent,
     OrderInfoComponent,
-    ShippingInfoComponent
+    ShippingInfoComponent,
+    StoreLogMonitorComponent
   ],
   providers: [ngrxCheckoutService]
 })

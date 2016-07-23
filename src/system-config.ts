@@ -5,6 +5,7 @@
 const map: any = {
   /* ngrx/router begin */
   '@ngrx': 'vendor/@ngrx',
+  'ngrx-store-logger': 'vendor/ngrx-store-logger',
   'path-to-regexp': 'vendor/path-to-regexp',
   'isarray': 'vendor/isarray',
   'query-string': 'vendor/query-string',
@@ -26,6 +27,10 @@ const packages: any = {
     format: 'cjs'
   },
   '@ngrx/router': { main: 'index' },
+  '@ngrx/effects': { main: 'index' },
+  '@ngrx/store-devtools': { main: 'index' },
+  '@ngrx/store-log-monitor': { main: 'index' },
+  'ngrx-store-logger': { main: 'dist/index' },
   'path-to-regexp': { main: 'index' },
   'isarray': { main: 'index' },
   'query-string': { main: 'index' },
@@ -62,7 +67,10 @@ const barrels: string[] = [
   'app/pages/shipping-info',
   'app/pages/shipping-method',
   'app/pages/payment-method',
-  'app/actions'
+  'app/actions',
+  'app/effects',
+  'app/reducers',
+  'app/services'
   /** @cli-barrel */
 ];
 

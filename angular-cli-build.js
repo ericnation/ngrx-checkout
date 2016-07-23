@@ -16,6 +16,7 @@ module.exports = function(defaults) {
 
       /* ngrx/router begin */
       '@ngrx/**/*.+(js|js.map)',
+      'ngrx-store-logger/dist/*.+(js|js.map)',
       'path-to-regexp/*.+(js|js.map)',
       'isarray/*.+(js|js.map)',
       'query-string/*.+(js|js.map)',
