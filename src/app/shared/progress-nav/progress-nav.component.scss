@@ -50,12 +50,12 @@
     cursor: pointer;
     display: block;
     line-height: 19px;
-    height: 19px;
+    height: 27px;
     margin: 10px auto;
     position: relative;
     text-align: center;
     top: 58px;
-    width: 19px;
+    width: 27px;
 
     @include apply-to("max-width", 668px) {
       top: 64px;
@@ -69,7 +69,7 @@
     height: 5px;
     left: -50%;
     position: absolute;
-    top: 75px;
+    top: 79px;
     width: 100%;
     z-index: -1;
 
