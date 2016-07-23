@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +9,16 @@ import { NgForm } from '@angular/forms';
 export class OrderSummaryComponent implements OnInit {
   couponCodeFormVisible = false;
   couponcodes = false;
-  constructor() {}
+  @Input() cart;
+
+  constructor(
+
+  ) {
+
+  }
 
   ngOnInit() {
+    console.log('cart' , this.cart);
   }
 
   showCouponForm() {

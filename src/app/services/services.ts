@@ -16,12 +16,12 @@ export class CheckoutServices {
   private Header = { headers: new Headers({ 'Content-Type': 'application/json' }) };
 
   getCheckoutSettings(): Observable<CheckoutSettings> {
-    return this.http.get('/api/CheckoutSettings/')
-        .map(res => res.json().Data);
+    return this.http.get('http://localhost:3000/api/CheckoutSettings/')
+        .map(res => res.json());
   }
 
   getCart(): Observable<Cart> {
-    return this.http.get('/api/Cart')
-        .map(res => res.json().Data);
+    return this.http.get('http://localhost:3000/api/Cart')
+        .map(res => res.json());
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { HeaderComponent } from "./shared/header/header.component";
 import { OrderSummaryComponent } from "./shared/order-summary/order-summary.component";
 import { ProgressNavComponent } from "./shared/progress-nav/progress-nav.component";
@@ -27,11 +28,13 @@ import { CheckoutActions } from './actions/checkout-actions';
 })
 
 export class NgrxCheckoutAppComponent implements OnInit {
+  cart: Observable<any>;
+
   constructor(
       private store: Store<AppState>,
       private checkoutActions: CheckoutActions
   ) {
-
+    this.cart = store.select('cart');
   }
 
   ngOnInit() {

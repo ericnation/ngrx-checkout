@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Action } from '@ngrx/store';
 
 
-export interface CheckoutProgressState {
+export type CheckoutProgressState =  {
   orderInfoActive: boolean;
   orderInfoComplete: boolean;
   shippingActive: boolean;

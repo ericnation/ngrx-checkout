@@ -22,5 +22,5 @@ export class CheckoutEffects {
   @Effect() loadCheckoutSettings$ = this.update$
       .whenAction(CheckoutActions.LOAD_CHECKOUT_SETTINGS)
       .switchMap(() => this.service.getCheckoutSettings())
-      .map(checkoutSettings => this.checkoutActions.loadCheckoutSettingsSuccess(checkoutSettings))
+      .map(checkoutSettings => this.checkoutActions.loadCheckoutSettingsSuccess(checkoutSettings));
 }

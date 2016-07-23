@@ -10,7 +10,7 @@
       <route-view></route-view>
     </div>
     <div class="col-xs-12 col-sm-5 col-md-3">
-      <order-summary></order-summary>
+      <order-summary [cart]="cart | async"></order-summary>
     </div>
   </div>
 </div>
