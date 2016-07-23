@@ -1,5 +1,7 @@
-import { CheckoutProgressActions } from './actions';
+import { CheckoutProgressActions } from './checkout-progress.actions';
+import { CheckoutActions } from './checkout-actions';
 
 export default [
-  CheckoutProgressActions
+  CheckoutProgressActions,
+  CheckoutActions
 ]

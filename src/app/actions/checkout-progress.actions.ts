@@ -12,12 +12,27 @@ import { Action } from '@ngrx/store';
  * within your application components.
  */
 export class CheckoutProgressActions {
-  
 
   static SUBMIT_ORDER_INFO = 'Submit Order Info';
   submitOrderInfo(orderinfo): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_ORDER_INFO,
+      payload: orderinfo
+    }
+  }
+
+  static SUBMIT_ORDER_INFO_SUCCESS = 'Submit Order Info Success';
+  submitOrderInfoSucess(orderinfo): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_ORDER_INFO_SUCCESS,
+      payload: orderinfo
+    }
+  }
+
+  static SUBMIT_ORDER_INFO_FAIL = 'Submit Order Info Fail';
+  submitOrderInfoFail(orderinfo): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_ORDER_INFO_FAIL,
       payload: orderinfo
     }
   }

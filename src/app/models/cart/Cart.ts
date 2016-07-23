@@ -3,11 +3,11 @@ import { ShoppingCart } from "./ShoppingCart";
 /**
  * A ShoppingCart with supporting data
  */
-export interface ShoppingCartPackage extends RetailPackage {
+export interface Cart extends RetailPackage {
   /**
    * Represents a customer shopping cart
    */
-  Cart:ShoppingCart;
+  Cart: ShoppingCart;
 
-  CartEmail:string;
+  CartEmail: string;
 }
