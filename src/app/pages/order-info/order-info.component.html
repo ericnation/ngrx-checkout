@@ -21,9 +21,7 @@
             <span class="form-error-tab" *ngIf="email.errors.required">Email address required</span>
           </div>
         </div>
-        <p class="small-text">Already have an account? <a (click)="showLoginForm()">Log In</a></p>
       </div>
-      <hr class="divider-horz m-b-2 m-t-2"/>
       <div class="form-group">
         <label for="giftmessage" class="input-label">Gift Message <span class="text-muted small-text">(optional)</span></label>
         <p class="paragraph-text sub-label">This message will show on the gift receipt</p>
@@ -42,7 +40,7 @@
           <a href="" class="previous-step-link" id="backToShoppingCartBtn" (click)="backToShoppingCart()"><i class="fa fa-long-arrow-left"></i> Back to Shopping Cart</a>
         </div>
         <div class="col-sm-12 col-md-6">
-          <button type="submit" class="btn btn-primary next-step-btn pull-sm-right" id="continueShippingInfoBtn"> Continue to Shipping</button>
+          <button type="submit" class="btn btn-primary next-step-btn pull-sm-right" id="continueShippingInfoBtn"> Continue</button>
         </div>
       </div>
     </div>

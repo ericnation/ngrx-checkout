@@ -29,12 +29,14 @@ import { CheckoutActions } from './actions/checkout-actions';
 
 export class NgrxCheckoutAppComponent implements OnInit {
   cart: Observable<any>;
+  checkoutProgress: Observable<any>;
 
   constructor(
       private store: Store<AppState>,
       private checkoutActions: CheckoutActions
   ) {
     this.cart = store.select('cart');
+    this.checkoutProgress = store.select('checkoutProgress');
   }
 
   ngOnInit() {

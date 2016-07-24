@@ -85,6 +85,10 @@
   li.active {
     color: $gray2;
     font-weight: $semiBold;
+
+    &:before {
+      background-color: $accent-color;
+    }
   }
 
   li.disabled {
@@ -99,8 +103,14 @@
     }
   }
 
-  li.active:before, li.completed:before {
+  li.completed:before {
     background-color: $accent-color;
+    color: #fff;
+    content: "\f00c";
+    font-family: 'fontawesome';
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-right: 1px;
   }
 
   li.completed + li:after {

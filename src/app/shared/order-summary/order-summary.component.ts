@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -6,30 +6,11 @@ import { Component, AfterViewInit, Input } from '@angular/core';
   templateUrl: 'order-summary.component.html',
   styleUrls: ['order-summary.component.css']
 })
-export class OrderSummaryComponent implements AfterViewInit {
-  couponCodeFormVisible = false;
-  couponcodes = false;
+export class OrderSummaryComponent {
   @Input() cart;
 
-  constructor(
-
-  ) {
+  constructor() {
 
   }
-
-  ngAfterViewInit() {
-    console.log('cart ' , this.cart);
-  }
-
-  showCouponForm() {
-    this.couponCodeFormVisible = true;
-  }
-
-  applyCouponCode() {
-    this.couponCodeFormVisible = false;
-    this.couponcodes = true;
-  }
-
-  removeCouponCode(code) {}
 
 }

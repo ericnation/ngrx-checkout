@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@ngrx/router';
 
 @Component({
   moduleId: module.id,
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['progress-nav.component.css']
 })
 export class ProgressNavComponent implements OnInit {
-
+  @Input() checkoutProgress;
   constructor() {}
 
   ngOnInit() {

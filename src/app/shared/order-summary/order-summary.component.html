@@ -28,28 +28,8 @@
             <td class="text-xs-right">{{cart?.cart.TaxAmount | currency:currencyCode:true:'1.2-2'}}</td>
           </tr>
         </table>
-        <div class="coupon-code-wrap clearfix" *ngIf="couponcodes">
-          <div class="pull-xs-left coupon-code-col">
-            <span class="icon icon-close-alt" (click)="removeCouponCode(code)"></span>
-            <span class="small-text coupon-code">SAVE25</span>
-          </div>
-          <div class="pull-xs-right coupon-code-discount-col">
-            <span class="text-success m-b-0 small-text">-$11.50</span>
-          </div>
-        </div>
       </li>
-      <li class="list-group-item order-summary-coupons-wrap">
-        <a (click)="showCouponForm()" *ngIf="!couponCodeFormVisible">Apply Coupon / Gift Certificate</a>
-        <div class="form-group" *ngIf="couponCodeFormVisible">
-          <label for="couponcode" class="input-label">Apply Coupon / Gift Certificate</label>
-          <div class="input-group" >
-            <input type="text" id="couponcode" class="form-control" #couponcode name="couponcode">
-            <span class="input-group-btn">
-              <button (click)="applyCouponCode()" class="btn btn-secondary">Apply</button>
-            </span>
-          </div>
-        </div>
-      </li>
+
       <li class="list-group-item order-total-wrap clearfix">
         <h3 class="heading-2 m-b-0">Order Total</h3>
         <span class="total-price-wrap pull-xs-right">

@@ -77,27 +77,3 @@
   font-size: .9rem;
 }
 
-.coupon-code-wrap {
-  margin-top: 20px;
-}
-
-.coupon-code-discount-col {
-  padding-top: 4px;
-}
-
-.coupon-code-col {
-
-  .icon-close-alt {
-    color: $gray5;
-    font-size: 1.25em;
-    padding-right: 3px;
-    position: relative;
-    top: 4px;
-    @include transition(.2s all);
-
-    &:hover {
-      color: $gray6;
-      cursor: pointer;
-    }
-  }
-}
