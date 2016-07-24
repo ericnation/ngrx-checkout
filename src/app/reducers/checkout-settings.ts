@@ -8,18 +8,33 @@ export interface CheckoutSettingsState {
   loaded: boolean;
   loading: boolean;
   id: string;
+  settings: {};
 }
 
 const initialState: CheckoutSettingsState = {
   loaded: false,
   loading: false,
-  id: ''
+  id: '',
+  settings: {}
 };
 
 export default function(state = initialState, action: Action): CheckoutSettingsState {
   switch (action.type) {
+    case CheckoutActions.LOAD_CHECKOUT_SETTINGS: {
+      return Object.assign({}, state, {
+        loading: true
+      });
+    }
+
     case CheckoutActions.LOAD_CHECKOUT_SETTINGS_SUCCESS: {
-      return action.payload;
+      const settings = action.payload[0].Data;
+      return {
+        loaded: true,
+        loading: false,
+        id: settings.ID,
+        settings: settings
+      }
+
     }
 
     default: {

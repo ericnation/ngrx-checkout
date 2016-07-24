@@ -13,19 +13,19 @@
         <table class="table table-sm no-borders order-summary-info-table">
           <tr>
             <td>Total Quantity</td>
-            <td class="text-xs-right">2</td>
+            <td class="text-xs-right">{{cart?.cart.ItemCount | currency:currencyCode:true:'1.2-2'}}</td>
           </tr>
           <tr>
             <td>Item Subtotal</td>
-            <td class="text-xs-right">$35.00</td>
+            <td class="text-xs-right">{{cart?.cart.ItemTotal | currency:currencyCode:true:'1.2-2'}}</td>
           </tr>
           <tr>
             <td>Shipping and Handling</td>
-            <td class="text-xs-right">---</td>
+            <td class="text-xs-right">{{cart?.cart.ShippingAmount | currency:currencyCode:true:'1.2-2'}}</td>
           </tr>
           <tr>
             <td>Estimated Tax</td>
-            <td class="text-xs-right">---</td>
+            <td class="text-xs-right">{{cart?.cart.TaxAmount | currency:currencyCode:true:'1.2-2'}}</td>
           </tr>
         </table>
         <div class="coupon-code-wrap clearfix" *ngIf="couponcodes">
@@ -54,7 +54,7 @@
         <h3 class="heading-2 m-b-0">Order Total</h3>
         <span class="total-price-wrap pull-xs-right">
           <span class="x-small-text currency-text">USD</span>
-          <h3 class="heading-2 m-b-0 text-xs-right">$40.00</h3>
+          <h3 class="heading-2 m-b-0 text-xs-right">{{cart?.cart.TotalDue | currency:currencyCode:true:'1.2-2'}}</h3>
         </span>
       </li>
     </ul>

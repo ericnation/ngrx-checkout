@@ -10,12 +10,14 @@ export interface CartState {
   loaded: boolean;
   loading: boolean;
   id: string;
+  cart: {};
 }
 
 const initialState: CartState = {
   loaded: false,
   loading: false,
-  id: ''
+  id: '',
+  cart: {}
 };
 
 export default function(state = initialState, action: Action): CartState {
@@ -28,12 +30,12 @@ export default function(state = initialState, action: Action): CartState {
     }
 
     case CheckoutActions.LOAD_CART_SUCCESS: {
-      const cart = action.payload;
-      console.log('payload ' , action.payload);
+      const cart = action.payload[0].Data.Cart;
       return {
         loaded: true,
         loading: false,
-        id: cart.ID
+        id: cart.ID,
+        cart: cart
       }
     }
     default: {
