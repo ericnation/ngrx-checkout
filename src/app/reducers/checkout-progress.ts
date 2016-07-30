@@ -2,6 +2,7 @@ import '@ngrx/core/add/operator/select';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { Action } from '@ngrx/store';
+import {CheckoutProgressActions} from "../actions/checkout-progress.actions";
 
 
 export type CheckoutProgressState =  {
@@ -30,6 +31,16 @@ const initialState: CheckoutProgressState = {
 
 export default function(state = initialState, action: Action): CheckoutProgressState {
   switch (action.type) {
+
+    case CheckoutProgressActions.SUBMIT_ORDER_INFO_SUCCESS: {
+      return Object.assign({}, state, {
+        orderInfoActive: false,
+        orderInfoComplete: true,
+        shippingActive: true
+      });
+
+    }
+
     default: {
       return state;
     }

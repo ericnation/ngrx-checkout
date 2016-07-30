@@ -3,7 +3,6 @@ import 'rxjs/add/operator/map';
 import { Action } from '@ngrx/store';
 
 import { CheckoutActions } from '../actions/checkout-actions';
-import {Cart} from "../models/cart/Cart";
 
 
 export interface CartState {

@@ -1,7 +1,27 @@
 <ul class="step-progress-nav clearfix">
   <li class="completed">Cart</li>
-  <li [ngClass]="{active: checkoutProgress.orderInfoActive}">Order Info</li>
-  <li [ngClass]="{active: checkoutProgress.shippingActive}">Shipping</li>
-  <li [ngClass]="{active: checkoutProgress.billingActive}">Billing</li>
-  <li [ngClass]="{active: checkoutProgress.reviewAndPayActive}">Review &amp; Pay</li>
+  <li [ngClass]="{
+      active: checkoutProgress.orderInfoActive,
+      completed: checkoutProgress.orderInfoComplete}">
+    Order Info
+  </li>
+
+  <li [ngClass]="{
+      active: checkoutProgress.shippingActive,
+      completed: checkoutProgress.shippingComplete}">
+    Shipping
+  </li>
+
+  <li [ngClass]="{
+      active: checkoutProgress.billingActive,
+      completed: checkoutProgress.billingComplete}">
+    Billing
+  </li>
+
+  <li [ngClass]="{
+      active: checkoutProgress.reviewAndPayActive,
+      completed: checkoutProgress.reviewAndPayComplete}">
+    Review &amp; Pay
+  </li>
+
 </ul>
