@@ -25,7 +25,7 @@ export default function(state = initialState, action: Action): CheckoutSettingsS
     }
 
     case CheckoutActions.LOAD_CHECKOUT_SETTINGS_SUCCESS: {
-      const settings = action.payload[0];
+      const settings = action.payload;
       return {
         loaded: true,
         loading: false,

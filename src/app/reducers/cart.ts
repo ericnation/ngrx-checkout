@@ -28,7 +28,7 @@ export default function(state = initialState, action: Action): CartState {
     }
 
     case CheckoutActions.LOAD_CART_SUCCESS: {
-      const cart = action.payload[0];
+      const cart = action.payload;
       return {
         loaded: true,
         loading: false,

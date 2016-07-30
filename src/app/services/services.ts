@@ -15,20 +15,18 @@ export class CheckoutServices {
 
   }
 
-
-
   getCheckoutSettings(): Observable<CheckoutSettings> {
     return this.http.get('http://localhost:3000/api/CheckoutSettings/')
         .map(res => res.json());
   }
 
   getCart(): Observable<Cart> {
-    return this.http.get('http://localhost:3000/api/Cart')
+    return this.http.get('http://localhost:3000/api/Cart/')
         .map(res => res.json());
   }
 
   saveOrderInfo(orderInfo): Observable<any> {
-    return this.http.post('http://localhost:3000/api/Cart/', JSON.stringify(orderInfo), HEADER)
+    return this.http.patch('http://localhost:3000/api/Cart/', JSON.stringify(orderInfo), HEADER)
         .map(res => res.json());
   }
 }
