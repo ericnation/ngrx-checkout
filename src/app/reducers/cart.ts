@@ -9,14 +9,12 @@ import {Cart} from "../models/cart/Cart";
 export interface CartState {
   loaded: boolean;
   loading: boolean;
-  id: string;
   cart: {};
 }
 
 const initialState: CartState = {
   loaded: false,
   loading: false,
-  id: '',
   cart: {}
 };
 
@@ -30,11 +28,10 @@ export default function(state = initialState, action: Action): CartState {
     }
 
     case CheckoutActions.LOAD_CART_SUCCESS: {
-      const cart = action.payload[0].Data.Cart;
+      const cart = action.payload[0];
       return {
         loaded: true,
         loading: false,
-        id: cart.ID,
         cart: cart
       }
     }

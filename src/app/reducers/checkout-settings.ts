@@ -7,14 +7,12 @@ import { CheckoutActions } from '../actions/checkout-actions';
 export interface CheckoutSettingsState {
   loaded: boolean;
   loading: boolean;
-  id: string;
   settings: {};
 }
 
 const initialState: CheckoutSettingsState = {
   loaded: false,
   loading: false,
-  id: '',
   settings: {}
 };
 
@@ -27,11 +25,10 @@ export default function(state = initialState, action: Action): CheckoutSettingsS
     }
 
     case CheckoutActions.LOAD_CHECKOUT_SETTINGS_SUCCESS: {
-      const settings = action.payload[0].Data;
+      const settings = action.payload[0];
       return {
         loaded: true,
         loading: false,
-        id: settings.ID,
         settings: settings
       }
 

@@ -5,32 +5,32 @@
       <p class="paragraph-text required-text"><span class="text-danger">*</span> = Required Field</p>
 
       <div class="form-group">
-        <label for="email" class="input-label" [class.invalid]="!email.valid && email.touched">Email Address <span class="text-danger">*</span></label>
+        <label for="GuestEmail" class="input-label" [class.invalid]="!GuestEmail.valid && GuestEmail.touched">Email Address <span class="text-danger">*</span></label>
         <p class="paragraph-text sub-label">Your order confirmation will be emailed to this address</p>
         <div class="validation-wrap">
           <input class="form-control"
-                 [class.ng-invalid]="!email.valid"
-                 type="email"
-                 name="email"
-                 id="email"
-                 #email="ngModel"
-                 [(ngModel)]="cart.email"
+                 [class.ng-invalid]="!GuestEmail.valid"
+                 type="GuestEmail"
+                 name="GuestEmail"
+                 id="GuestEmail"
+                 #GuestEmail="ngModel"
+                 [(ngModel)]="cart.GuestEmail"
                  required />
-          <span class="input-valid" *ngIf="email.valid"><i class="fa fa-check-circle-o"></i></span>
-          <div *ngIf="email.touched && email.errors">
-            <span class="form-error-tab" *ngIf="email.errors.required">Email address required</span>
+          <span class="input-valid" *ngIf="GuestEmail.valid"><i class="fa fa-check-circle-o"></i></span>
+          <div *ngIf="GuestEmail.touched && GuestEmail.errors">
+            <span class="form-error-tab" *ngIf="GuestEmail.errors.required">Email address required</span>
           </div>
         </div>
       </div>
       <div class="form-group">
-        <label for="giftmessage" class="input-label">Gift Message <span class="text-muted small-text">(optional)</span></label>
+        <label for="GiftMessage" class="input-label">Gift Message <span class="text-muted small-text">(optional)</span></label>
         <p class="paragraph-text sub-label">This message will show on the gift receipt</p>
           <textarea class="form-control"
-                    name="giftmessage"
-                    id="giftmessage"
+                    name="GiftMessage"
+                    id="GiftMessage"
                     rows="3"
-                    #giftmessage="ngModel"
-                    [(ngModel)]="cart.giftmessage">
+                    #GiftMessage="ngModel"
+                    [(ngModel)]="cart.GiftMessage">
           </textarea>
       </div>
     </div>

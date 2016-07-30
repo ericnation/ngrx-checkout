@@ -10,8 +10,6 @@ import { StoreLogMonitorComponent } from '@ngrx/store-log-monitor';
 import { Store } from '@ngrx/store';
 import { AppState} from './reducers/index';
 import { CheckoutActions } from './actions/checkout-actions';
-import { CheckoutSettings } from "./models/checkout-settings";
-import { Cart } from "./models/cart/Cart";
 
 @Component({
   moduleId: module.id,
