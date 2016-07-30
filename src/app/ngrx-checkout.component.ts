@@ -10,6 +10,8 @@ import { StoreLogMonitorComponent } from '@ngrx/store-log-monitor';
 import { Store } from '@ngrx/store';
 import { AppState} from './reducers/index';
 import { CheckoutActions } from './actions/checkout-actions';
+import { CheckoutSettings } from "./models/checkout-settings";
+import { Cart } from "./models/cart/Cart";
 
 @Component({
   moduleId: module.id,
@@ -30,6 +32,7 @@ import { CheckoutActions } from './actions/checkout-actions';
 export class NgrxCheckoutAppComponent implements OnInit {
   cart: Observable<any>;
   checkoutProgress: Observable<any>;
+  checkoutSettings: Observable<any>;
 
   constructor(
       private store: Store<AppState>,
@@ -37,6 +40,7 @@ export class NgrxCheckoutAppComponent implements OnInit {
   ) {
     this.cart = store.select('cart');
     this.checkoutProgress = store.select('checkoutProgress');
+    this.checkoutSettings = store.select('checkout');
   }
 
   ngOnInit() {
