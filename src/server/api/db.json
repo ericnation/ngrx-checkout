@@ -7,7 +7,7 @@
   },
   "Cart": {
     "GuestEmail": "eric.nation@gmail.com",
-    "GiftMessage": "Here's a gift mesasge for ya ! ",
+    "GiftMessage": "Here's a gift message for ya ! ",
     "ShippingAmount": 5,
     "ItemTotal": 53.54,
     "TaxAmount": 3.95,
@@ -70,32 +70,19 @@
       }
     ],
     "ShippingAddress": {
-      "POBox": false,
-      "Business": false,
-      "SingleLine": "7777 W 7TH ST Tempe, AZ 85333",
-      "Type": null,
-      "PostCode": "85333",
-      "Phone": "480-495-3333",
-      "Country": "United States",
-      "State": "AZ",
-      "City": "Tempe",
-      "Street1": "7777 W 7TH ST",
-      "CompanyName": null,
-      "LastName": "Nation",
-      "FirstName": "Eric"
-    },
-    "BillingAddress": {
-      "POBox": false,
-      "TaxExempt": false,
-      "Business": false,
-      "CountryId": null,
-      "StateId": null,
-      "SingleLine": "",
-      "TaxId": "",
-      "Type": "",
       "PostCode": "",
       "Phone": "",
-      "Country": "",
+      "State": "",
+      "City": "",
+      "Street1": "",
+      "CompanyName": "",
+      "LastName": "",
+      "FirstName": ""
+    },
+    "BillingAddress": {
+      "Business": false,
+      "PostCode": "",
+      "Phone": "",
       "State": "",
       "City": "",
       "Street1": "",
@@ -104,34 +91,29 @@
       "FirstName": ""
     },
     "ShippingMethod": {
-      "ShippingAddressEnabled": false,
-      "TransitDays_Max": 0,
-      "TransitDays_Min": 0,
       "ProcessDays": 10,
       "Price": 5,
-      "VendorName": "Pick-up",
-      "Description": "Pick-UP",
       "Name": "Pick-UP"
     }
   },
   "ShippingMethods": [
     {
-      "ShippingMethodName": "UPS",
+      "Name": "UPS",
       "ProcessDays": 3,
       "Price": 7.50
     },
     {
-      "ShippingMethodName": "FedEx Standard",
+      "Name": "FedEx Standard",
       "ProcessDays": 5,
       "Price": 4.00
     },
     {
-      "ShippingMethodName": "UPS Next Day Air",
+      "Name": "UPS Next Day Air",
       "ProcessDays": 1,
       "Price": 16.50
     },
     {
-      "ShippingMethodName": "USPS Priority Mail",
+      "Name": "USPS Priority Mail",
       "ProcessDays": 3,
       "Price": 8.55
     }

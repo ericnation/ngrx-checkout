@@ -1,5 +1,5 @@
 <div class="card page-card">
-  <form #f="ngForm" (ngSubmit)="saveAddress(f.form)">
+  <form #shippingInfoForm="ngForm" (ngSubmit)="saveAddress(shippingInfoForm)">
     <div class="card-block">
       <h4 class="card-title">Shipping Info</h4>
       <p class="paragraph-text required-text"><span class="text-danger">*</span> = Required Field</p>
@@ -52,24 +52,6 @@
             </div>
           </div>
         </div>
-        <hr class="m-y-1">
-        <div class="form-row clearfix">
-          <div class="form-col-6">
-            <div class="form-group">
-              <label for="Country" class="input-label">Country</label>
-              <div class="select-wrap">
-                <select name="Country" id="Country" [(ngModel)]="address.Country" #Country="ngModel" required>
-                  <option value="" selected>-- Select Country --</option>
-                  <option *ngFor="let country of countries" [value]=country.ID>{{country.country}}</option>
-                </select>
-                <span class="select-arrow">
-                  <span class="arrow-down"></span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="m-y-1">
         <div class="row">
           <div class="col-xs-12">
             <div class="form-group">
@@ -110,7 +92,7 @@
               <div class="select-wrap">
                 <select name="State" id="State" [(ngModel)]="address.State" #State="ngModel" required>
                   <option value="" selected>-- Select State --</option>
-                  <option *ngFor="let state of states" [value]=state.ID>{{state.state}}</option>
+                  <option *ngFor="let state of states" [value]=state.name>{{state.name}}</option>
                 </select>
                 <div class="select-arrow">
                   <span class="arrow-down"></span>

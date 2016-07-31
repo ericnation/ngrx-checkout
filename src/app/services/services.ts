@@ -15,6 +15,11 @@ export class CheckoutServices {
 
   }
 
+  getStates(): Observable<any> {
+    return this.http.get('http://services.groupkt.com/state/get/USA/all')
+        .map(res => res.json());
+  }
+
   getCheckoutSettings(): Observable<CheckoutSettings> {
     return this.http.get('http://localhost:3000/api/CheckoutSettings/')
         .map(res => res.json());

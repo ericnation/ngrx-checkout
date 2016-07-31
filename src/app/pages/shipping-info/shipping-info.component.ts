@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@ngrx/router';
+import { AppState } from '../../reducers/index'
+import { Store } from '@ngrx/store';
+import { CheckoutProgressActions } from '../../actions/checkout-progress.actions';
+import { CheckoutServices } from '../../services/services';
 
 @Component({
   moduleId: module.id,
@@ -14,29 +18,35 @@ export class ShippingInfoComponent implements OnInit {
   address = {
 
   };
+  states;
 
-  countries = [
-    { id: 1, country: 'United States' },
-    { id: 2, country: 'Canada' },
-    { id: 3, country: 'Mexico' }
-  ];
-
-  states = [
-    { id: 1, state: 'Arizona' },
-    { id: 2, state: 'California' },
-    { id: 3, state: 'Colorado' }
-  ];
-
-  constructor(private router: Router) {
-
+  constructor(
+      private router: Router,
+      private store: Store<AppState>,
+      private checkoutProgressActions: CheckoutProgressActions,
+      private service: CheckoutServices
+  ) {
 
   }
 
   ngOnInit() {
+
+    this.service.getStates()
+        .subscribe(
+            response => {
+              this.states = response.RestResponse.result;
+              console.log(response);
+            },
+            error => {
+              console.log('getStates error ' + error);
+            }
+        );
   }
 
   saveAddress(form) {
-    console.log(form);
+    if (form.valid) {
+      this.router.go('/shipping-method');
+    }
   }
 
   backToOrderInfo() {
