@@ -1,8 +1,29 @@
 /* global require, module */
 
-var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
+const fs = require('fs');
+const path = require('path');
+
+// Import the require hook. Enables us to require TS files natively.
+require('ts-node/register');
+
+const Funnel = require('broccoli-funnel');
+const MergeTree = require('broccoli-merge-trees');
+
+const Angular2App = require('angular-cli/lib/broccoli/angular2-app');
 
 module.exports = function(defaults) {
+
+  const appTree = buildAppTree(defaults);
+
+  const excludeServer = new Funnel('src', {
+    exclude: ['server']
+  });
+
+  return new MergeTree([appTree, excludeServer], { overwrite: true });
+
+};
+
+function buildAppTree(defaults) {
   return new Angular2App(defaults, {
     vendorNpmFiles: [
       'systemjs/dist/system-polyfills.js',
@@ -28,4 +49,4 @@ module.exports = function(defaults) {
       "cacheExclude": [/\/_[^\/]+$/]
     }
   });
-};
+}

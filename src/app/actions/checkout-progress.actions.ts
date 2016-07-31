@@ -36,4 +36,100 @@ export class CheckoutProgressActions {
       payload: orderinfo
     }
   }
+
+  static SUBMIT_SHIPPING_ADDRESS = 'Submit Shipping Address';
+  submitShippingAddress(shippingAddress): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_SHIPPING_ADDRESS,
+      payload: shippingAddress
+    }
+  }
+
+  static SUBMIT_SHIPPING_ADDRESS_SUCCESS = 'Submit Shipping Address Success';
+  submitShippingAddressSuccess(shippingAddress): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_SHIPPING_ADDRESS_SUCCESS,
+      payload: shippingAddress
+    }
+  }
+
+  static SUBMIT_SHIPPING_ADDRESS_FAIL = 'Submit Shipping Address Fail';
+  submitShippingAddressFail(shippingAddress): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_SHIPPING_ADDRESS_FAIL,
+      payload: shippingAddress
+    }
+  }
+
+  static  SUBMIT_SHIPPING_METHOD = 'Submit Shipping Method';
+  submitShippingMethod(shippingMethod): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_SHIPPING_METHOD,
+      payload: shippingMethod
+    }
+  }
+
+  static  SUBMIT_SHIPPING_METHOD_SUCCESS = 'Submit Shipping Method Success';
+  submitShippingMethodSuccess(shippingMethod): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_SHIPPING_METHOD_SUCCESS,
+      payload: shippingMethod
+    }
+  }
+
+  static  SUBMIT_SHIPPING_METHOD_FAIL = 'Submit Shipping Method Fail';
+  submitShippingMethodFail(shippingMethod): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_SHIPPING_METHOD_FAIL,
+      payload: shippingMethod
+    }
+  }
+
+  static SUBMIT_PAYMENT = 'Submit Payment';
+  submitPayment(paymentInfo): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_PAYMENT,
+      payload: paymentInfo
+    }
+  }
+
+  static SUBMIT_PAYMENT_SUCCESS = 'Submit Payment Success';
+  submitPaymentSuccess(paymentInfo): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_PAYMENT_SUCCESS,
+      payload: paymentInfo
+    }
+  }
+
+  static SUBMIT_PAYMENT_FAIL = 'Submit Payment Fail';
+  submitPaymentFail(paymentInfo): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_PAYMENT_FAIL,
+      payload: paymentInfo
+    }
+  }
+
+  static PLACE_ORDER = 'Place Order';
+  placeOrder(cart): Action {
+    return {
+      type: CheckoutProgressActions.PLACE_ORDER,
+      payload: cart
+    }
+  }
+
+  static PLACE_ORDER_SUCCESS = 'Place Order Success';
+  placeOrderSuccess(cart): Action {
+    return {
+      type: CheckoutProgressActions.PLACE_ORDER_SUCCESS,
+      payload: cart
+    }
+  }
+
+  static PLACE_ORDER_FAIL = 'Place Order Fail';
+  placeOrderFail(cart): Action {
+    return {
+      type: CheckoutProgressActions.PLACE_ORDER_FAIL,
+      payload: cart
+    }
+  }
 }
