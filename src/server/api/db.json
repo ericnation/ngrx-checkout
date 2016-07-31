@@ -7,7 +7,7 @@
   },
   "Cart": {
     "GuestEmail": "eric.nation@gmail.com",
-    "GiftMessage": "Hello there sir!",
+    "GiftMessage": "Here's a gift mesasge for ya ! ",
     "ShippingAmount": 5,
     "ItemTotal": 53.54,
     "TaxAmount": 3.95,
@@ -113,5 +113,27 @@
       "Description": "Pick-UP",
       "Name": "Pick-UP"
     }
-  }
+  },
+  "ShippingMethods": [
+    {
+      "ShippingMethodName": "UPS",
+      "ProcessDays": 3,
+      "Price": 7.50
+    },
+    {
+      "ShippingMethodName": "FedEx Standard",
+      "ProcessDays": 5,
+      "Price": 4.00
+    },
+    {
+      "ShippingMethodName": "UPS Next Day Air",
+      "ProcessDays": 1,
+      "Price": 16.50
+    },
+    {
+      "ShippingMethodName": "USPS Priority Mail",
+      "ProcessDays": 3,
+      "Price": 8.55
+    }
+  ]
 }
