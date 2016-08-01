@@ -45,6 +45,7 @@ export class ShippingInfoComponent implements OnInit {
 
   saveAddress(form) {
     if (form.valid) {
+      this.store.dispatch(this.checkoutProgressActions.submitShippingAddress(form.value));
       this.router.go('/shipping-method');
     }
   }

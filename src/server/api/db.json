@@ -5,9 +5,30 @@
     "ContactEmail": "ericnation@test.com",
     "StoreName": "NGRX Store"
   },
+  "ShippingAddress": {
+    "PostCode": "",
+    "Phone": "",
+    "State": "",
+    "City": "",
+    "Street1": "",
+    "CompanyName": "",
+    "LastName": "",
+    "FirstName": ""
+  },
+  "BillingAddress": {
+    "Business": false,
+    "PostCode": "",
+    "Phone": "",
+    "State": "",
+    "City": "",
+    "Street1": "",
+    "CompanyName": "",
+    "LastName": "",
+    "FirstName": ""
+  },
   "Cart": {
     "GuestEmail": "eric.nation@gmail.com",
-    "GiftMessage": "Here's a gift message for ya ! ",
+    "GiftMessage": "Hello ksfajlfskdjfm",
     "ShippingAmount": 5,
     "ItemTotal": 53.54,
     "TaxAmount": 3.95,
@@ -23,99 +44,89 @@
     "CanCheckout": true,
     "ItemCount": 3,
     "Discount": null,
-    "GiftCertificates": [],
-    "Items": [
-      {
-        "UnitPrice": 24.1,
-        "CartRetailItemSizeId": 1003336,
-        "CartRetailItemId": 1002840,
-        "ProductStyleSizeId": 1004831,
-        "ProductStyleId": 1000715,
-        "Quantity": 2,
-        "ProductId": 1000026,
-        "SidePreviews": [
-          {
-            "ProductOnlyUrl": "http://stores.inksoft.com/images/products/2758/products/07707/Sport_Scarlet_Red_Grey_Slate/front/500.png",
-            "SideName": "Front"
-          },
-          {
-            "ProductOnlyUrl": "http://stores.inksoft.com/images/products/2758/products/07707/Sport_Scarlet_Red_Grey_Slate/back/500.png",
-            "SideName": "Back"
-          }
-        ],
-        "QuantityDiscountAmount": 4.34,
-        "PrintSetupCharge": 0,
-        "PrintSetupCost": 0,
-        "PriceScheduleId": 1000056,
-        "FullName": "Short Sleeve Colorblock T-Shirt - Sport Scarlet Red Grey Slate - M"
-      },
-      {
-        "UnitPrice": 5.34,
-        "CartRetailItemSizeId": 1003337,
-        "CartRetailItemId": 1002841,
-        "ProductStyleSizeId": 1019638,
-        "ProductStyleId": 1003109,
-        "Quantity": 1,
-        "ProductId": 1000186,
-        "SidePreviews": [
-          {
-            "ProductOnlyUrl": "http://stores.inksoft.com/images/products/2758/products/1080/White/front/500.png",
-            "SideName": "Front"
-          }
-        ],
-        "QuantityDiscountAmount": 0.48,
-        "PrintSetupCharge": 0,
-        "PrintSetupCost": 0,
-        "FullName": "+Canvas Ladies\\' Baby Rib Tank Top - White - M"
-      }
-    ],
-    "ShippingAddress": {
-      "PostCode": "",
-      "Phone": "",
-      "State": "",
-      "City": "",
-      "Street1": "",
-      "CompanyName": "",
-      "LastName": "",
-      "FirstName": ""
+    "GiftCertificates": []
+  },
+  "Items": [
+    {
+      "UnitPrice": 24.1,
+      "CartRetailItemSizeId": 1003336,
+      "CartRetailItemId": 1002840,
+      "ProductStyleSizeId": 1004831,
+      "ProductStyleId": 1000715,
+      "Quantity": 2,
+      "ProductId": 1000026,
+      "SidePreviews": [
+        {
+          "ProductOnlyUrl": "http://stores.inksoft.com/images/products/2758/products/07707/Sport_Scarlet_Red_Grey_Slate/front/500.png",
+          "SideName": "Front"
+        },
+        {
+          "ProductOnlyUrl": "http://stores.inksoft.com/images/products/2758/products/07707/Sport_Scarlet_Red_Grey_Slate/back/500.png",
+          "SideName": "Back"
+        }
+      ],
+      "QuantityDiscountAmount": 4.34,
+      "PrintSetupCharge": 0,
+      "PrintSetupCost": 0,
+      "PriceScheduleId": 1000056,
+      "FullName": "Short Sleeve Colorblock T-Shirt - Sport Scarlet Red Grey Slate - M"
     },
-    "BillingAddress": {
-      "Business": false,
-      "PostCode": "",
-      "Phone": "",
-      "State": "",
-      "City": "",
-      "Street1": "",
-      "CompanyName": "",
-      "LastName": "",
-      "FirstName": ""
-    },
-    "ShippingMethod": {
-      "ProcessDays": 10,
-      "Price": 5,
-      "Name": "Pick-UP"
+    {
+      "UnitPrice": 5.34,
+      "CartRetailItemSizeId": 1003337,
+      "CartRetailItemId": 1002841,
+      "ProductStyleSizeId": 1019638,
+      "ProductStyleId": 1003109,
+      "Quantity": 1,
+      "ProductId": 1000186,
+      "SidePreviews": [
+        {
+          "ProductOnlyUrl": "http://stores.inksoft.com/images/products/2758/products/1080/White/front/500.png",
+          "SideName": "Front"
+        }
+      ],
+      "QuantityDiscountAmount": 0.48,
+      "PrintSetupCharge": 0,
+      "PrintSetupCost": 0,
+      "FullName": "+Canvas Ladies\\' Baby Rib Tank Top - White - M"
     }
+  ],
+  "PaymentInfo": {
+    "CardNumber": null,
+    "ExpirationMonth": "",
+    "ExpirationYear": "",
+    "CCV": null
+  },
+  "ShippingMethod": {
+    "Name": "UPS",
+    "ProcessDays": 3,
+    "Price": 7.5,
+    "ID": 1
   },
   "ShippingMethods": [
     {
       "Name": "UPS",
       "ProcessDays": 3,
-      "Price": 7.50
+      "Price": 7.5,
+      "ID": 1
     },
     {
       "Name": "FedEx Standard",
       "ProcessDays": 5,
-      "Price": 4.00
+      "Price": 4,
+      "ID": 2
     },
     {
       "Name": "UPS Next Day Air",
       "ProcessDays": 1,
-      "Price": 16.50
+      "Price": 16.5,
+      "ID": 3
     },
     {
       "Name": "USPS Priority Mail",
       "ProcessDays": 3,
-      "Price": 8.55
+      "Price": 8.55,
+      "ID": 4
     }
   ]
 }

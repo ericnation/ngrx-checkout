@@ -1,3 +1,4 @@
 {
-  "/api/": "/"
+  "/api/": "/",
+  "/api/:resource/:id/ShippingAddress": "/:resource/:id"
 }

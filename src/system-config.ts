@@ -72,6 +72,8 @@ const barrels: string[] = [
   'app/reducers',
   'app/services',
   'app/models'
+  'app/pages/review',
+  'app/pages/confirmation',
   /** @cli-barrel */
 ];
 

@@ -132,4 +132,32 @@ export class CheckoutProgressActions {
       payload: cart
     }
   }
+
+  static NAVIGATE_TO_ORDER_INFO = 'Navigate to Order Info';
+  navigateToOrderInfo(): Action {
+    return {
+      type: CheckoutProgressActions.NAVIGATE_TO_ORDER_INFO
+    }
+  }
+
+  static NAVIGATE_TO_SHIPPING = 'Navigate to Shipping';
+  navigateToShipping(): Action {
+    return {
+      type: CheckoutProgressActions.NAVIGATE_TO_SHIPPING
+    }
+  }
+
+  static NAVIGATE_TO_PAYMENT = 'Navigate to Payment';
+  navigateToPayment(): Action {
+    return {
+      type: CheckoutProgressActions.NAVIGATE_TO_PAYMENT
+    }
+  }
+
+  static NAVIGATE_TO_REVIEW = 'Navigate to Review';
+  navigateToReview(): Action {
+    return {
+      type: CheckoutProgressActions.NAVIGATE_TO_REVIEW
+    }
+  }
 }

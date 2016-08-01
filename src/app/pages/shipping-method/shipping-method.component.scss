@@ -1,0 +1,83 @@
+@import "../../../app/assets/styles/tools/mixins";
+
+.shipping-method-label-wrap {
+  left: 29%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @include apply-to("max-width", 810px) {
+    left: 21%;
+  }
+
+  @include apply-to("max-width", 510px) {
+    left: 29%;
+  }
+
+  @include apply-to("max-width", 375px) {
+    left: 33%;
+  }
+}
+
+.shipping-method-cost {
+  padding-right: 25px;
+  padding-left: 7px;
+}
+
+.shipping-method-pickup {
+  margin-bottom: 0;
+}
+
+.shipping-method-pickup-date {
+  @include apply-to("max-width", 510px) {
+    display: block;
+  }
+}
+
+.radio {
+  margin-bottom: 0;
+  width: 80%;
+  position: relative;
+
+  @include apply-to("max-width", 900px) {
+    width: 100%;
+  }
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.radio-panel {
+  padding: 20px 15px 32px;
+
+  @include apply-to("max-width", 900px) {
+    padding: 20px 15px;
+  }
+
+}
+
+.shipping-method-logo {
+  float: right;
+  max-width: 20%;
+
+  @include apply-to("max-width", 900px) {
+    float: none;
+    left: 29%;
+    margin-top: 30px;
+    position: relative;
+  }
+
+  @include apply-to("max-width", 810px) {
+    left: 21%;
+  }
+
+  @include apply-to("max-width", 510px) {
+    left: 29%;
+    margin-top: 45px;
+  }
+
+  @include apply-to("max-width", 375px) {
+    left: 33%;
+  }
+}

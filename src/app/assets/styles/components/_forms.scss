@@ -17,6 +17,7 @@ select:-moz-focusring {
 
 .input-label {
   color: $gray1;
+  cursor: pointer;
   font-weight: $semiBold;
   @include font-size(14px);
   margin-bottom: 5px;

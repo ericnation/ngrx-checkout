@@ -1,3 +1,59 @@
-<p>
-  shipping-method works!
-</p>
+<div class="card page-card">
+  <form #f="ngForm" (ngSubmit)="submitShippingMethod(f)">
+    <div class="card-block">
+      <h4 class="card-title">Shipping Method</h4>
+      <div class="radio-panel"
+           [class.active]="model.shippingmethod == shippingMethod.ID"
+           *ngFor="let shippingMethod of shippingMethods">
+
+        <div class="form-group clearfix" >
+
+          <div class="radio pull-sm-left">
+            <label class="input-label radio">
+              <input type="radio"
+                     name="shippingmethod"
+                     id="{{shippingMethod.ID}}"
+                     value="{{shippingMethod.ID}}"
+                     [(ngModel)]="model.shippingmethod">
+
+              <span class="shipping-method-cost">{{shippingMethod.Price | currency:currencyCode:true:'1.2-2'}}</span>
+              <div class="shipping-method-label-wrap">
+                {{shippingMethod.Name}}
+                <p class="shipping-method-pickup paragraph-text">
+                  <span class="text-muted">Estimated Ship Date</span>
+                  <span class="text-success shipping-method-pickup-date">{{currentDate | addDays:shippingMethod.ProcessDays | date:'fullDate'}}</span>
+                </p>
+              </div>
+            </label>
+          </div>
+          <img *ngIf="shippingMethod.Name == 'FedEx Standard'" src="{{'app/assets/images/fedex_logo.svg'}}"
+               srcset="{{'app/assets/images/fedex_logo.png'}} 1x,
+               {{'app/assets/images/fedex_logo@2x.png'}} 2x"
+               alt="FedEx Logo"
+               class="shipping-method-logo">
+          <img *ngIf="shippingMethod.Name == 'UPS'" src="{{'app/assets/images/ups-logo.svg'}}"
+               srcset="{{'app/assets/images/ups-logo.png'}} 1x,
+               {{'app/assets/images/ups-logo@2x.png'}} 2x"
+               alt="UPS Logo"
+               class="shipping-method-logo">
+          <img *ngIf="shippingMethod.Name == 'USPS Priority Mail'" src="{{'app/assets/images/united-states-postal-service-logo.svg'}}"
+               srcset="{{'app/assets/images/united-states-postal-service-logo.png'}} 1x,
+               {{'app/assets/images/united-states-postal-service-logo.png'}} 2x"
+               alt="USPS Logo"
+               class="shipping-method-logo">
+        </div>
+      </div>
+    </div><!--end of card-block-->
+
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 previous-step-link-wrap">
+          <a class="previous-step-link" id="backToShippingInfoBtn" (click)="backToShippingInfo()"><span class="fa fa-long-arrow-left"></span> Back to Shipping Info</a>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <button type="submit" class="btn btn-primary next-step-btn pull-sm-right" id="continueToBillingBtn"> Continue to Billing</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div><!-- end of card -->

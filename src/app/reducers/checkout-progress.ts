@@ -41,6 +41,54 @@ export default function(state = initialState, action: Action): CheckoutProgressS
 
     }
 
+    case CheckoutProgressActions.SUBMIT_SHIPPING_METHOD_SUCCESS: {
+      return Object.assign({}, state, {
+        shippingActive: false,
+        shippingComplete: true,
+        billingActive: true
+      });
+    }
+
+    case CheckoutProgressActions.SUBMIT_PAYMENT_SUCCESS: {
+      return Object.assign({}, state, {
+        billingActive: false,
+        billingComplete: true,
+        reviewAndPayActive: true
+      });
+    }
+
+    case CheckoutProgressActions.PLACE_ORDER_SUCCESS: {
+      return Object.assign({}, state, {
+        reviewAndPayActive: false,
+        reviewAndPayComplete: true,
+        checkoutComplete: true
+      });
+    }
+
+    case CheckoutProgressActions.NAVIGATE_TO_ORDER_INFO: {
+      return Object.assign({}, state, {
+        orderInfoActive: true
+      });
+    }
+
+    case CheckoutProgressActions.NAVIGATE_TO_SHIPPING: {
+      return Object.assign({}, state, {
+        shippingActive: true
+      });
+    }
+
+    case CheckoutProgressActions.NAVIGATE_TO_PAYMENT: {
+      return Object.assign({}, state, {
+        billingActive: true
+      });
+    }
+
+    case CheckoutProgressActions.NAVIGATE_TO_REVIEW: {
+      return Object.assign({}, state, {
+        reviewAndPayActive: true
+      })
+    }
+
     default: {
       return state;
     }

@@ -2,25 +2,29 @@
   <li class="completed">Cart</li>
   <li [ngClass]="{
       active: checkoutProgress.orderInfoActive,
-      completed: checkoutProgress.orderInfoComplete}">
+      completed: checkoutProgress.orderInfoComplete}"
+      (click)="goToOrderInfo()">
     Order Info
   </li>
 
   <li [ngClass]="{
       active: checkoutProgress.shippingActive,
-      completed: checkoutProgress.shippingComplete}">
+      completed: checkoutProgress.shippingComplete}"
+      (click)="goToShipping()">
     Shipping
   </li>
 
   <li [ngClass]="{
       active: checkoutProgress.billingActive,
-      completed: checkoutProgress.billingComplete}">
+      completed: checkoutProgress.billingComplete}"
+      (click)="goToBilling()">
     Billing
   </li>
 
   <li [ngClass]="{
       active: checkoutProgress.reviewAndPayActive,
-      completed: checkoutProgress.reviewAndPayComplete}">
+      completed: checkoutProgress.reviewAndPayComplete}"
+      (click)="goToReviewAndPay()">
     Review &amp; Pay
   </li>
 
