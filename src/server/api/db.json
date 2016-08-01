@@ -6,14 +6,14 @@
     "StoreName": "NGRX Store"
   },
   "ShippingAddress": {
-    "PostCode": "",
-    "Phone": "",
-    "State": "",
-    "City": "",
-    "Street1": "",
-    "CompanyName": "",
-    "LastName": "",
-    "FirstName": ""
+    "PostCode": "666666",
+    "Phone": "480-111-2222",
+    "State": "Louisiana",
+    "City": "City Of Satan",
+    "Street1": "666 S Hell St",
+    "CompanyName": "Company Whatever",
+    "LastName": "Smith",
+    "FirstName": "John"
   },
   "BillingAddress": {
     "Business": false,
@@ -27,8 +27,8 @@
     "FirstName": ""
   },
   "Cart": {
-    "GuestEmail": "eric.nation@gmail.com",
-    "GiftMessage": "Hello ksfajlfskdjfm",
+    "GuestEmail": "test@test.com",
+    "GiftMessage": "Gift message testing",
     "ShippingAmount": 5,
     "ItemTotal": 53.54,
     "TaxAmount": 3.95,
@@ -98,10 +98,10 @@
     "CCV": null
   },
   "ShippingMethod": {
-    "Name": "UPS",
+    "Name": "USPS Priority Mail",
     "ProcessDays": 3,
-    "Price": 7.5,
-    "ID": 1
+    "Price": 8.55,
+    "ID": 4
   },
   "ShippingMethods": [
     {

@@ -1,5 +1,5 @@
 <div class="card page-card">
-  <form #f="ngForm" (ngSubmit)="submitShippingMethod(f)">
+  <form #f="ngForm">
     <div class="card-block">
       <h4 class="card-title">Shipping Method</h4>
       <div class="radio-panel"
@@ -14,7 +14,8 @@
                      name="shippingmethod"
                      id="{{shippingMethod.ID}}"
                      value="{{shippingMethod.ID}}"
-                     [(ngModel)]="model.shippingmethod">
+                     [(ngModel)]="model.shippingmethod"
+                     (click)="setShippingMethod(shippingMethod)">
 
               <span class="shipping-method-cost">{{shippingMethod.Price | currency:currencyCode:true:'1.2-2'}}</span>
               <div class="shipping-method-label-wrap">
@@ -48,10 +49,21 @@
     <div class="card-footer">
       <div class="row">
         <div class="col-sm-12 col-md-6 previous-step-link-wrap">
-          <a class="previous-step-link" id="backToShippingInfoBtn" (click)="backToShippingInfo()"><span class="fa fa-long-arrow-left"></span> Back to Shipping Info</a>
+          <a class="previous-step-link"
+             id="backToShippingInfoBtn"
+             (click)="backToShippingInfo()">
+            <span class="fa fa-long-arrow-left"></span>
+            Back to Shipping Info
+          </a>
         </div>
         <div class="col-sm-12 col-md-6">
-          <button type="submit" class="btn btn-primary next-step-btn pull-sm-right" id="continueToBillingBtn"> Continue to Billing</button>
+          <button
+              type="button"
+              class="btn btn-primary next-step-btn pull-sm-right"
+              id="continueToBillingBtn"
+              (click)="submitShippingMethod()">
+            Continue to Billing
+          </button>
         </div>
       </div>
     </div>

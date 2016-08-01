@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@ngrx/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../reducers/index';
-import {CheckoutProgressActions} from "../../actions/checkout-progress.actions";
+import { CheckoutProgressActions } from '../../actions/checkout-progress.actions';
 
 @Component({
   moduleId: module.id,
