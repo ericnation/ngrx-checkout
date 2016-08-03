@@ -1,0 +1,241 @@
+@import "../../../app/assets/styles/tools/mixins";
+@import "../../../app/assets/styles/settings/variables";
+@import "../../../app/assets/styles/settings/color-palette";
+
+.review-header {
+  background: $gray7;
+  padding: 10px 15px;
+}
+
+.review-section-title {
+  color: $gray1;
+  display: inline-block;
+  @include font-size(18px);
+  margin-bottom: 0;
+}
+
+.review-section-content {
+  @include font-size(14px);
+  padding: 15px 10px;
+
+  .dl-group {
+    width: 100%;
+  }
+
+  dd {
+    margin-bottom: 0;
+  }
+
+  .def-term {
+    float: left;
+    margin-right: 10px;
+    width: 25%;
+
+    @include apply-to("max-width", 475px) {
+      width: 100%;
+    }
+  }
+
+  .def-display {
+    float: left;
+  }
+}
+
+
+.edit-link {
+  @include font-size(14px);
+}
+
+.footer-order-total-txt {
+  color: $gray1;
+  @include font-size(20px);
+  margin-bottom: 2px;
+}
+
+
+
+.cc-card-img-wrap {
+  float: left;
+  margin-right: 10px;
+}
+
+.credit-card-logo {
+  width: 38px;
+  height: 24px;
+}
+
+.product-row {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  padding: 1.4rem 0;
+  width: 100%;
+
+  &:first-child {
+    padding: 0 0 1.4rem;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    padding: 1.4rem 0 0;
+  }
+}
+
+.product-img-wrap {
+  background: #fff;
+  cursor: pointer;
+  height: 110px;
+  float: left;
+  margin-right: 15px;
+  padding: 3px;
+  position: relative;
+  width: 16%;
+
+  .ink-icon-zoom-in {
+    bottom: -17px;
+    left: -5px;
+    position: absolute;
+  }
+
+  @include apply-to("max-width", 500px) {
+    width: 24%;
+  }
+
+  .product-img {
+    width: 100%;
+  }
+}
+
+.product-meta-wrap {
+  float: left;
+  margin-right: 15px;
+  width: 41%;
+
+  @include apply-to("max-width", 500px) {
+    float: right;
+    margin-bottom: 25px;
+    margin-right: 0;
+    width: 71%;
+  }
+
+  @include apply-to("max-width", 405px) {
+    width: 68%;
+  }
+}
+
+.product-title {
+  color: $gray1;
+  @include font-size(14px);
+  margin-bottom: 4px;
+}
+
+.product-meta-info {
+  color: $gray1;
+  margin-bottom: 7px;
+  span {
+    display: block;
+  }
+}
+
+.product-costs-wrap {
+  float: right;
+  text-align: right;
+  width: 34%;
+
+  @include apply-to("max-width", 500px) {
+    float: none;
+    width: 100%;
+  }
+}
+
+.product-notes-link {
+  @include font-size(12px);
+  display: block;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.sizes-list {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.product-cost-row {
+  @include font-size(12px);
+  clear: both;
+  content: '';
+  display: table;
+  width: 100%;
+
+  a {
+    color: $accent-color;
+  }
+}
+
+.product-cost-label {
+  float: left;
+  text-align: right;
+  width: 65%;
+
+  @include apply-to("max-width", 405px) {
+    text-align: left;
+  }
+}
+
+.product-cost-number {
+  float: right;
+  text-align: right;
+  width: 35%;
+}
+
+.product-subtotal {
+  float: left;
+}
+
+.product-subtotal-number {
+  float: right;
+  text-align: right;
+}
+
+
+
+.order-total-col {
+  padding-top: 5px;
+  text-align: right;
+}
+
+.place-order-col {
+  .place-order-btn {
+    height: 45px;
+    width: 252px;
+
+    @include apply-to("max-width", 992px) {
+      display: block;
+      width: 100%;
+    }
+
+    @include apply-to("max-width", $breakPointMedium) {
+      margin-top: 15px;
+    }
+  }
+}
+
+.color-disclaimer-wrap {
+  margin-top: 65px;
+  margin-bottom: 25px;
+}
+
+.disclaimer-title {
+  @include font-size(12px);
+  color: $gray3;
+}
+
+.disclaimer-text {
+  color: $gray3;
+}
+
+#btnPaypalPayNow {
+  display: inline;
+  margin-left: -9999px;
+  opacity: 0;
+}

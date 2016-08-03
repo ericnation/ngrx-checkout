@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, EventEmitter } from "@angular/core";
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -14,6 +14,8 @@ const HEADER = { headers: new Headers({ 'Content-Type': 'application/json' }) };
 @Injectable()
 
 export class CheckoutServices {
+
+  public triggerData = new EventEmitter();
 
   constructor(private http: Http) {
 
@@ -34,12 +36,18 @@ export class CheckoutServices {
         .map(res => res.json());
   }
 
+  getCartItems(): Observable<any> {
+    return this.http.get('http://localhost:3000/api/Items/')
+        .map(res => res.json());
+  }
+
   saveOrderInfo(orderInfo): Observable<OrderInfo> {
     return this.http.patch('http://localhost:3000/api/Cart/', JSON.stringify(orderInfo), HEADER)
         .map(res => res.json());
   }
 
   saveShippingInfo(shippingInfo): Observable<ShippingInfo> {
+    this.triggerData.emit({ value: shippingInfo });
     return this.http.patch('http://localhost:3000/api/ShippingAddress', JSON.stringify(shippingInfo), HEADER)
         .map(res => res.json());
   }

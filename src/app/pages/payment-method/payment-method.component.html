@@ -1,3 +1,136 @@
-<p>
-  payment-method works!
-</p>
+<div class="card page-card">
+  <form #paymentForm="ngForm" (ngSubmit)="submitPayment(paymentForm)">
+    <div class="card-block">
+      <h4 class="card-title">Enter Payment Information</h4>
+      <div class="credit-card-form-wrap">
+        <div class="form-group cardnumber-col">
+          <label for="CardNumber" class="input-label"
+                 [class.invalid]="!CardNumber.valid && CardNumber.touched">
+            Card Number <span class="text-danger">*</span></label>
+          <div class="validation-wrap">
+            <input type="text"
+                   class="form-control"
+                   name="CardNumber"
+                   id="CardNumber"
+                   [(ngModel)]="card.CardNumber"
+                   #CardNumber="ngModel"
+                   required
+                   minlength="16">
+            <span class="input-valid" *ngIf="CardNumber.touched && CardNumber.valid">
+              <span class="fa fa-check-circle-o"></span>
+            </span>
+            <span *ngIf="CardNumber.touched && CardNumber.errors">
+              <span class="form-error-tab" *ngIf="CardNumber.errors.required">
+                Card required
+              </span>
+              <span class="form-error-tab" *ngIf="CardNumber.errors.minlength">
+                At least 16 digits
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="form-row clearfix">
+          <div class="exp-month-col">
+            <div class="form-group">
+              <div class="validation-wrap">
+                <label for="ExpirationMonth"
+                       class="input-label">
+                  Expiration
+                  <span class="text-danger">*</span>
+                </label>
+                <div class="select-wrap">
+                  <select name="ExpirationMonth"
+                          id="ExpirationMonth"
+                          [(ngModel)]="card.ExpirationMonth"
+                          #ExpirationMonth="ngModel"
+                          required>
+                    <option value="" disabled selected>Month</option>
+                    <option *ngFor="let month of months" [value]="month.id">{{month.month}}</option>
+                  </select>
+                  <span class="select-arrow">
+                     <span class="arrow-down"></span>
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="exp-year-col">
+            <div class="form-group">
+              <label for="ExpirationYear" class="input-label"> </label>
+              <div class="select-wrap">
+                <select name="ExpirationYear"
+                        id="ExpirationYear"
+                        [(ngModel)]="card.ExpirationYear"
+                        #ExpirationYear="ngModel"
+                        required>
+                  <option value="" disabled selected>Year</option>
+                  <option *ngFor="let year of expyears" [value]="year.year">{{year.year}}</option>
+                </select>
+                <span class="select-arrow">
+                  <span class="arrow-down"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="cvc-code-col">
+            <div class="form-group">
+              <label for="CvcCode"
+                     class="input-label"
+                     [class.invalid]="!CvcCode.valid && CvcCode.touched">
+                CVC Code <span class="text-danger">*</span></label>
+              <div class="validation-wrap">
+                <input type="text"
+                       class="form-control"
+                       name="CvcCode"
+                       id="CvcCode"
+                       [(ngModel)]="card.CvcCode"
+                       #CvcCode="ngModel"
+                       required
+                       minlength="3">
+                <span class="input-valid"
+                      *ngIf="CvcCode.touched && CvcCode.valid">
+                      <span class="fa fa-check-circle-o"></span>
+                    </span>
+                <div *ngIf="CvcCode.touched && CvcCode.errors">
+                      <span class="form-error-tab"
+                            *ngIf="CvcCode.touched && CvcCode.errors.required">
+                      Required
+                    </span>
+                  <span class="form-error-tab"
+                        *ngIf="CvcCode.touched && CvcCode.errors.minlength">
+                      At least 3 digits
+                    </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="paragraph-text m-y-1"><span class="fa fa-lock"></span>
+        All tranactions are secure and encrypted. Credit card information is never stored.
+      </p>
+
+    </div>
+
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 previous-step-link-wrap">
+          <a class="previous-step-link"
+             id="backToShippingMethodBtn"
+             (click)="backToShippingMethod()">
+            <span class="fa fa-long-arrow-left"></span>
+            Back to Shipping Method
+          </a>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <button type="submit"
+                  class="btn btn-primary next-step-btn pull-sm-right"
+                  id="reviewOrderBtn">
+            Review Order
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

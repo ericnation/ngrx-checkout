@@ -15,25 +15,6 @@
 a.btn.disabled {
   cursor: not-allowed;
   pointer-events: auto;
-
-}
-
-
-.btn-brand-primary {
-  background: $brand-primary;
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.7);
-  border: solid 1px #e65350;
-  color: #fff;
-  font-weight: 400;
-
-  &:hover, &:focus, &:active {
-    background: darken($brand-primary, 8%);
-    color: #fff;
-  }
-}
-
-.btn-brand-primary:disabled:hover {
-  background: darken($brand-primary, 0%);
 }
 
 

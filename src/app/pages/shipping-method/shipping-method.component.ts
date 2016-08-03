@@ -46,7 +46,6 @@ export class ShippingMethodComponent implements OnInit {
   }
 
   submitShippingMethod() {
-    console.log(this.selectedShippingMethod);
     this.store.dispatch(this.checkoutProgressActions.submitShippingMethod(this.selectedShippingMethod));
     this.router.go('/payment-info');
   }

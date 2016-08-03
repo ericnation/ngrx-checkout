@@ -1,6 +1,6 @@
 
 /*===============================
-  INK Font Styles
+  Font Styles
 ---------------------------------*/
 
 $fontFamily: "Open Sans", Arial, sans-serif;
@@ -12,8 +12,10 @@ $regular: 400;
 $semiBold: 600;
 $bold: 700;
 
+$breakPointMedium: 768px;
+
 /*===============================
-  INK Shared Styles
+  Shared Styles
 ---------------------------------*/
 
 $globalBorderRadius: 3px;
