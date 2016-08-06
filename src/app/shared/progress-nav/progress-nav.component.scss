@@ -10,32 +10,30 @@
 }
 
 .step-progress-nav {
-  left: -42px;
+  @include flexbox();
+  left: -.9375rem;
   margin: 0;
   padding: 0;
   position: relative;
   top: -35px;
-  width: 110%;
 
   @include apply-to("max-width", 768px) {
     top: -15px;
-    left: -38px;
   }
 
   @include apply-to("max-width", 530px) {
-    left: -24px;
-    width: 113%;
+    width: 105%;
   }
 
   li {
     color: $gray3;
-    float: left;
+    display: inline-block;
+    @include flex(1);
     font-weight: 500;
     @include font-size(11px);
     list-style-type: none;
     position: relative;
     text-align: center;
-    width: 20%;
 
     @include apply-to("min-width", 600px) {
       @include font-size(12px);
