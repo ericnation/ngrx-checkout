@@ -26,6 +26,11 @@ export class CheckoutEffects {
       .switchMap(() => this.service.getCheckoutSettings())
       .map(checkoutSettings => this.checkoutActions.loadCheckoutSettingsSuccess(checkoutSettings));
 
+  @Effect() loadShippingMethods$ = this.update$
+      .whenAction(CheckoutActions.LOAD_SHIPPING_METHODS)
+      .switchMap(() => this.service.getShippingMethods())
+      .map(shippingMethods => this.checkoutActions.loadShippingMethodsSuccess(shippingMethods));
+
   @Effect() saveOrderInfo$ = this.update$
       .whenAction(CheckoutProgressActions.SUBMIT_ORDER_INFO)
       .map(update => update.action.payload)

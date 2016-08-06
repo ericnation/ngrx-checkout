@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CheckoutServices } from "../../services/services";
 import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 import { AddDays } from "../../shared/pipes/add-days.pipe";
@@ -16,9 +16,10 @@ import { AppState } from "../../reducers/index";
   pipes: [AddDays]
 })
 
-export class ShippingMethodComponent implements OnInit {
+export class ShippingMethodComponent implements OnInit, OnDestroy {
   currentDate = new Date();
   model;
+  private subscription;
   shippingMethods;
   selectedShippingMethod;
 
@@ -30,19 +31,18 @@ export class ShippingMethodComponent implements OnInit {
   ) {
     this.model = {
       shippingmethod: ''
-    }
+    };
+
+    this.subscription = this.store.select('shippingMethods')
+        .subscribe(shippingMethods => {
+          this.shippingMethods = shippingMethods;
+        });
+
+
   }
 
   ngOnInit() {
-    this.service.getCheckoutMethods()
-      .subscribe(
-          response => {
-            this.shippingMethods = response;
-          },
-          errors => {
-            console.log('getShippingMethods ' + errors);
-          }
-      );
+
   }
 
   submitShippingMethod() {
@@ -56,6 +56,10 @@ export class ShippingMethodComponent implements OnInit {
 
   backToShippingInfo() {
     this.router.back();
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
 }

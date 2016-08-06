@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { Cart, CheckoutSettings } from '../models';
+import { Cart, CheckoutSettings, ShippingMethod } from '../models';
 
 @Injectable()
 
@@ -42,5 +42,21 @@ export class CheckoutActions {
       type: CheckoutActions.LOAD_CHECKOUT_SETTINGS_SUCCESS,
       payload: checkoutSettings
     }
+  }
+
+  static LOAD_SHIPPING_METHODS = 'Load Shipping Methods';
+  loadShippingMethods(): Action {
+    return {
+      type: CheckoutActions.LOAD_SHIPPING_METHODS
+    }
+  }
+
+  static LOAD_SHIPPING_METHODS_SUCCESS = 'Load Shipping Methods Success';
+  loadShippingMethodsSuccess(shippingMethods: ShippingMethod): Action {
+    return {
+      type: CheckoutActions.LOAD_SHIPPING_METHODS_SUCCESS,
+      payload: shippingMethods
+    }
+
   }
 }

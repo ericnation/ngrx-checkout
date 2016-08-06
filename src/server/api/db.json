@@ -6,14 +6,14 @@
     "StoreName": "NGRX Store"
   },
   "ShippingAddress": {
-    "PostCode": "666666",
-    "Phone": "480-111-2222",
-    "State": "Louisiana",
-    "City": "City Of Satan",
-    "Street1": "666 S Hell St",
-    "CompanyName": "Company Whatever",
+    "PostCode": "85281",
+    "Phone": "480-123-1232",
+    "State": "Arizona",
+    "City": "Tempe",
+    "Street1": "1234 E Avenue St",
+    "CompanyName": "Tristar",
     "LastName": "Smith",
-    "FirstName": "John"
+    "FirstName": "Ryan "
   },
   "BillingAddress": {
     "Business": false,
@@ -27,8 +27,8 @@
     "FirstName": ""
   },
   "Cart": {
-    "GuestEmail": "test@test.com",
-    "GiftMessage": "Gift message testing",
+    "GuestEmail": "eric.nation@gmail.com",
+    "GiftMessage": "Hello there! ",
     "ShippingAmount": 5,
     "ItemTotal": 53.54,
     "TaxAmount": 3.95,
@@ -54,6 +54,8 @@
       "ProductStyleSizeId": 1004831,
       "ProductStyleId": 1000715,
       "Quantity": 2,
+      "Size": "Medium",
+      "Color": "Red Grey Slate",
       "ProductId": 1000026,
       "SidePreviews": [
         {
@@ -69,7 +71,7 @@
       "PrintSetupCharge": 0,
       "PrintSetupCost": 0,
       "PriceScheduleId": 1000056,
-      "FullName": "Short Sleeve Colorblock T-Shirt - Sport Scarlet Red Grey Slate - M"
+      "Name": "Sport Scarlet TShirt"
     },
     {
       "UnitPrice": 5.34,
@@ -78,6 +80,8 @@
       "ProductStyleSizeId": 1019638,
       "ProductStyleId": 1003109,
       "Quantity": 1,
+      "Size": "Large",
+      "Color": "White",
       "ProductId": 1000186,
       "SidePreviews": [
         {
@@ -86,22 +90,22 @@
         }
       ],
       "QuantityDiscountAmount": 0.48,
-      "PrintSetupCharge": 0,
-      "PrintSetupCost": 0,
-      "FullName": "+Canvas Ladies\\' Baby Rib Tank Top - White - M"
+      "PrintSetupCharge": 1.3,
+      "PrintSetupCost": 2,
+      "Name": "Baby Rib Tank Top"
     }
   ],
   "PaymentInfo": {
-    "CardNumber": null,
-    "ExpirationMonth": "",
-    "ExpirationYear": "",
-    "CCV": null
+    "CardNumber": "41111111111111111",
+    "ExpirationMonth": "2",
+    "ExpirationYear": "2019",
+    "CvcCode": "123"
   },
   "ShippingMethod": {
-    "Name": "USPS Priority Mail",
-    "ProcessDays": 3,
-    "Price": 8.55,
-    "ID": 4
+    "Name": "FedEx Standard",
+    "ProcessDays": 5,
+    "Price": 4,
+    "ID": 2
   },
   "ShippingMethods": [
     {

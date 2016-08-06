@@ -43,6 +43,7 @@ import { combineReducers } from '@ngrx/store';
 import checkoutProgressReducer, * as fromCheckoutProgress from './checkout-progress';
 import checkoutSettingsReducer, * as fromCheckoutSettings from './checkout-settings';
 import cartReducer, * as fromCart from './cart';
+import shippingMethodsReducer, * as fromShippingMethods from './shipping-methods';
 
 /**
  * As mentioned, we treat each reducer like a table in a database. This means
@@ -53,6 +54,7 @@ export interface AppState {
   checkoutProgress: fromCheckoutProgress.CheckoutProgressState;
   checkoutSettings: fromCheckoutSettings.CheckoutSettingsState;
   cart: fromCart.CartState;
+  shippingMethods: fromShippingMethods.ShippingMethodsState
 }
 
 /**
@@ -66,5 +68,6 @@ export interface AppState {
 export default compose(storeLogger(), combineReducers)({
   checkoutProgress: checkoutProgressReducer,
   checkout: checkoutSettingsReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  shippingMethods: shippingMethodsReducer
 })
