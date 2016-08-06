@@ -13,4 +13,8 @@ export class OrderSummaryComponent {
 
   }
 
+  navigateBackToCart() {
+    alert('this button would direct you back to your cart');
+  }
+
 }

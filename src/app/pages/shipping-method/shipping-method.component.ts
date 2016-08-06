@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CheckoutServices } from "../../services/services";
 import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 import { AddDays } from "../../shared/pipes/add-days.pipe";
@@ -19,30 +19,39 @@ import { AppState } from "../../reducers/index";
 export class ShippingMethodComponent implements OnInit, OnDestroy {
   currentDate = new Date();
   model;
-  private subscription;
-  shippingMethods;
+  subscription;
+  shippingMethods = [];
   selectedShippingMethod;
 
   constructor(
     private router: Router,
     private service: CheckoutServices,
     private store: Store<AppState>,
-    private checkoutProgressActions: CheckoutProgressActions
+    private checkoutProgressActions: CheckoutProgressActions,
+    private cdr: ChangeDetectorRef
   ) {
     this.model = {
       shippingmethod: ''
     };
 
-    this.subscription = this.store.select('shippingMethods')
-        .subscribe(shippingMethods => {
-          this.shippingMethods = shippingMethods;
-        });
+
+    setTimeout(() => {
+      this.subscription = this.store.select('shippingMethods')
+          .subscribe(
+              shippingMethods => {
+
+                this.shippingMethods = shippingMethods['shippingMethods'];
+
+              }
+          );
+      this.cdr.detectChanges();
+    }, 100);
+
 
 
   }
 
   ngOnInit() {
-
   }
 
   submitShippingMethod() {

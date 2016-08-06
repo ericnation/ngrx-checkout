@@ -59,4 +59,22 @@ export class CheckoutActions {
     }
 
   }
+
+  static LOAD_SHIPPING_METHOD = 'Load Shipping Method';
+  loadShippingMethod(): Action {
+    return {
+      type: CheckoutActions.LOAD_SHIPPING_METHOD
+    }
+  }
+
+  static LOAD_SHIPPING_METHOD_SUCCESS = 'Load Shipping Method Success';
+  loadShippingMethodSuccess(shippingMethod: ShippingMethod): Action {
+    return {
+      type: CheckoutActions.LOAD_SHIPPING_METHODS_SUCCESS,
+      payload: shippingMethod
+    }
+
+  }
+
+  static LOAD_
 }

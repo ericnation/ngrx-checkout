@@ -7,13 +7,13 @@
   },
   "ShippingAddress": {
     "PostCode": "85281",
-    "Phone": "480-123-1232",
+    "Phone": "4804822748",
     "State": "Arizona",
-    "City": "Tempe",
-    "Street1": "1234 E Avenue St",
+    "City": "TEMPE",
+    "Street1": "1731 S. Farmer Ave",
     "CompanyName": "Tristar",
     "LastName": "Smith",
-    "FirstName": "Ryan "
+    "FirstName": "Eric"
   },
   "BillingAddress": {
     "Business": false,
@@ -102,10 +102,10 @@
     "CvcCode": "123"
   },
   "ShippingMethod": {
-    "Name": "FedEx Standard",
-    "ProcessDays": 5,
-    "Price": 4,
-    "ID": 2
+    "Name": "USPS Priority Mail",
+    "ProcessDays": 3,
+    "Price": 8.55,
+    "ID": 4
   },
   "ShippingMethods": [
     {

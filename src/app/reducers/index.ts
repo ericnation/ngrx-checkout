@@ -65,7 +65,7 @@ export interface AppState {
  * the result from right to left.
  */
 
-export default compose(storeLogger(), combineReducers)({
+export default compose(combineReducers)({
   checkoutProgress: checkoutProgressReducer,
   checkout: checkoutSettingsReducer,
   cart: cartReducer,
