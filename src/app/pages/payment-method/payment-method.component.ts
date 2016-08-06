@@ -40,6 +40,8 @@ export class PaymentMethodComponent implements OnInit {
     { year: '2021' }
   ];
 
+  sameAsShippingAddress = true;
+
   constructor(
       private store: Store<AppState>,
       private router: Router,

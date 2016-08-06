@@ -12,11 +12,11 @@
             <dl class="dl-list">
               <div class="def-group clearfix">
                 <dt class="def-term">Email Address:</dt>
-                <dd class="def-desc">{{cart?.cart.GuestEmail}}</dd>
+                <dd class="def-desc">{{cart.GuestEmail}}</dd>
               </div>
-              <div class="def-group clearfix" *ngIf="cart?.cart.GiftMessage">
+              <div class="def-group clearfix" *ngIf="cart.GiftMessage">
                 <dt class="def-term">Gift Message:</dt>
-                <dd class="def-desc">{{cart?.cart.GiftMessage}}</dd>
+                <dd class="def-desc">{{cart.GiftMessage}}</dd>
               </div>
             </dl>
           </div>
@@ -35,15 +35,15 @@
           <div class="review-section-content">
             <address class="m-b-2" id="shippingAddressInfo">
               <strong class="m-b-half">Ship to:</strong><br/>
-              {{shippingInfo?.FirstName}} {{shippingInfo?.LastName}} <br/>
+              {{shippingAddress.FirstName}} {{shippingAddress.LastName}} <br/>
               <!--<span *ngIf="shippingInfo.CompanyName !== null">{{shippingInfo.CompanyName}}<br></span>-->
-              {{shippingInfo?.Street1}} <br>
-              {{shippingInfo?.City}}, {{shippingInfo?.State}}, {{shippingInfo?.PostCode}} <br>
-              {{shippingInfo?.Phone}}
+              {{shippingAddress.Street1}} <br>
+              {{shippingAddress.City}}, {{shippingAddress.State}}, {{shippingAddress.PostCode}} <br>
+              {{shippingAddress.Phone}}
             </address>
             <dl>
               <dt class="m-b-half">Shipping Method:</dt>
-              <!--<dd>{{cart?.ShippingMethod?.VendorName}} - {{cart?.ShippingMethod?.Name}}</dd>-->
+              <dd>{{shippingMethod.Name}}</dd>
             </dl>
           </div>
         </div>
@@ -58,14 +58,14 @@
             <a class="pull-xs-right edit-link" (click)="backToPaymentInfo()" id="editPaymentMethodLink">Edit</a>
           </div>
           <div class="review-section-content">
-            <!--<address class="m-b-2" id="billingAddressInfo" *ngIf="cart?.BillingAddress?.Street1?.length > 0 && cart?.BillingAddress?.State?.length > 0">-->
+            <!--<address class="m-b-2" id="billingAddressInfo" *ngIf="billingAddress.Street1.length > 0 && billingAddress.State?.length > 0">-->
               <!--<strong class="m-b-half">Bill to:</strong><br>-->
-              <!--{{cart?.BillingAddress?.FirstName}} {{cart?.BillingAddress?.LastName}} <br/>-->
-              <!--<span *ngIf="cart?.BillingAddress?.CompanyName !== null">{{cart?.BillingAddress?.CompanyName}}<br></span>-->
-              <!--{{cart?.BillingAddress?.Street1}} <br>-->
-              <!--{{cart?.BillingAddress?.City}}, {{cart?.BillingAddress?.State}}, {{cart?.BillingAddress?.PostCode}} <br>-->
-              <!--{{cart?.BillingAddress?.Phone}}-->
-            <!-- </address> -->
+              <!--{{billingAddress.FirstName}} {{billingAddress.LastName}} <br/>-->
+              <!--<span *ngIf="billingAddress.CompanyName !== null">{{billingAddress.CompanyName}}<br></span>-->
+              <!--{{billingAddress.Street1}} <br>-->
+              <!--{{billingAddress.City}}, {{billingAddress.State}}, {{billingAddress.PostCode}} <br>-->
+              <!--{{billingAddress.Phone}}-->
+             <!--</address>-->
             <dl>
               <dt class="m-b-half">Payment Method</dt>
               <dd>
@@ -124,7 +124,7 @@
   <div class="card-footer ">
     <div class="row">
       <div class="col-sm-12 col-md-7 order-total-col hide-mobile-750">
-        <h4 class="footer-order-total-txt">Order Total: {{cart?.cart.TotalDue | currency:currencyCode:true:'1.2-2'}}</h4>
+        <h4 class="footer-order-total-txt">Order Total: {{cart.TotalDue | currency:currencyCode:true:'1.2-2'}}</h4>
         <p class="small-text text-muted m-b-0">By placing this order you agree to our <a id="termsConditionLinkPlaceOrder">terms and conditions</a></p>
       </div>
       <div class="col-sm-12 col-md-5 place-order-col">

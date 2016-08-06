@@ -1,8 +1,7 @@
 import '@ngrx/core/add/operator/select';
 import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Observable';
 import { Action } from '@ngrx/store';
-import {CheckoutProgressActions} from "../actions/checkout-progress.actions";
+import { CheckoutProgressActions } from '../actions/checkout-progress.actions';
 
 
 export type CheckoutProgressState =  {

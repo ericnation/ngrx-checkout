@@ -1,7 +1,6 @@
 import '@ngrx/core/add/operator/select';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/let';
-import { Observable } from 'rxjs/Observable';
 
 /**
  * The compose function is one of our most handy tools. In basic terms, you give
@@ -44,6 +43,10 @@ import checkoutProgressReducer, * as fromCheckoutProgress from './checkout-progr
 import checkoutSettingsReducer, * as fromCheckoutSettings from './checkout-settings';
 import cartReducer, * as fromCart from './cart';
 import shippingMethodsReducer, * as fromShippingMethods from './shipping-methods';
+import shippingMethodReducer, * as fromShippingMethod from './shipping-method';
+import cartItemsReducer, * as fromCartItems from './cart-items';
+import shippingAddressReducer, * as fromShippingAddress from './shipping-address';
+
 
 /**
  * As mentioned, we treat each reducer like a table in a database. This means
@@ -54,7 +57,10 @@ export interface AppState {
   checkoutProgress: fromCheckoutProgress.CheckoutProgressState;
   checkoutSettings: fromCheckoutSettings.CheckoutSettingsState;
   cart: fromCart.CartState;
-  shippingMethods: fromShippingMethods.ShippingMethodsState
+  shippingMethods: fromShippingMethods.ShippingMethodsState,
+  shippingMethod: fromShippingMethod.ShippingMethodState,
+  cartItems: fromCartItems.CartItemsState,
+  shippingAddress: fromShippingAddress.ShippingAddressState
 }
 
 /**
@@ -65,9 +71,12 @@ export interface AppState {
  * the result from right to left.
  */
 
-export default compose(combineReducers)({
+export default compose(storeLogger(), combineReducers)({
   checkoutProgress: checkoutProgressReducer,
   checkout: checkoutSettingsReducer,
   cart: cartReducer,
-  shippingMethods: shippingMethodsReducer
+  shippingMethods: shippingMethodsReducer,
+  shippingMethod: shippingMethodReducer,
+  cartItems: cartItemsReducer,
+  shippingAddress: shippingAddressReducer
 })

@@ -45,6 +45,7 @@ export class NgrxCheckoutAppComponent implements OnInit {
     this.store.dispatch(this.checkoutActions.loadCart());
     this.store.dispatch(this.checkoutActions.loadCheckoutSettings());
     this.store.dispatch(this.checkoutActions.loadShippingMethods());
+    this.store.dispatch(this.checkoutActions.loadCartItems());
   }
 
 }

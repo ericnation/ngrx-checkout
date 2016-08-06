@@ -1,10 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../reducers/index';
 import { Router } from '@ngrx/router';
 import { CheckoutProgressActions } from '../../actions/checkout-progress.actions';
-import { Observable } from 'rxjs/Observable';
 import { CheckoutServices } from '../../services/services';
+import { CheckoutActions } from '../../actions/checkout-actions';
 
 @Component({
   moduleId: module.id,
@@ -16,44 +16,54 @@ export class ReviewComponent implements OnInit, OnDestroy {
   cart;
   private subscription;
   items;
-  shippingInfo;
+  shippingAddress;
+  //billingAddress;
+  shippingMethod;
 
   constructor(
       private store: Store<AppState>,
       private router: Router,
       private checkoutProgressActions: CheckoutProgressActions,
-      private service: CheckoutServices
+      private checkoutActions: CheckoutActions,
+      private cdr: ChangeDetectorRef
   ) {
-    this.subscription = store.select('cart')
-        .subscribe(cart => {
-          this.cart = cart;
-        });
 
-    this.service.triggerData
-        .subscribe(
-            value => {
-              console.log('shipping info ' , value);
-              this.shippingInfo = value;
-            },
-            errors => {
-              console.log('triggerData failed ' + errors);
-            }
 
-        );
+    // Right now in RC4 there is a bug where subscribing to async data won't trigger a change detection to update the UI
+    // So we have to manually do it ... should be fixed in RC5 though.
+    setTimeout(() => {
+      this.subscription = store.select('cart')
+          .subscribe(cart => {
+            this.cart = cart['cart'];
+          });
+
+      this.subscription = store.select('cartItems')
+          .subscribe(cartItems => {
+            this.items = cartItems['cartItems'];
+          });
+
+      this.subscription = store.select('shippingAddress')
+          .subscribe(shippingAddress => {
+            this.shippingAddress = shippingAddress['shippingAddress'];
+          });
+
+      // this.subscription = store.select('billingAddress')
+      //     .subscribe(billingAddress => {
+      //       this.billingAddress = billingAddress['billingAddress'];
+      //     });
+
+      this.subscription = store.select('shippingMethod')
+          .subscribe(shippingMethod => {
+            this.shippingMethod = shippingMethod['shippingMethod'];
+          });
+
+      this.cdr.detectChanges();
+    }, 100);
+
   }
 
   ngOnInit() {
 
-    this.service.getCartItems()
-        .subscribe(
-            response => {
-              this.items = response;
-            },
-            errors => {
-              console.log('getCartItems ' , errors);
-            }
-
-        )
   }
 
   backToOrderInfo() {

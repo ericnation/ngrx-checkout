@@ -85,26 +85,26 @@ export class CheckoutProgressActions {
     }
   }
 
-  static SUBMIT_PAYMENT = 'Submit Payment';
+  static SUBMIT_PAYMENT_INFO = 'Submit Payment Info';
   submitPayment(paymentInfo): Action {
     return {
-      type: CheckoutProgressActions.SUBMIT_PAYMENT,
+      type: CheckoutProgressActions.SUBMIT_PAYMENT_INFO,
       payload: paymentInfo
     }
   }
 
-  static SUBMIT_PAYMENT_SUCCESS = 'Submit Payment Success';
+  static SUBMIT_PAYMENT_INFO_SUCCESS = 'Submit Payment Info Success';
   submitPaymentSuccess(paymentInfo): Action {
     return {
-      type: CheckoutProgressActions.SUBMIT_PAYMENT_SUCCESS,
+      type: CheckoutProgressActions.SUBMIT_PAYMENT_INFO_SUCCESS,
       payload: paymentInfo
     }
   }
 
-  static SUBMIT_PAYMENT_FAIL = 'Submit Payment Fail';
+  static SUBMIT_PAYMENT_INFO_FAIL = 'Submit Payment Info Fail';
   submitPaymentFail(paymentInfo): Action {
     return {
-      type: CheckoutProgressActions.SUBMIT_PAYMENT_FAIL,
+      type: CheckoutProgressActions.SUBMIT_PAYMENT_INFO_FAIL,
       payload: paymentInfo
     }
   }

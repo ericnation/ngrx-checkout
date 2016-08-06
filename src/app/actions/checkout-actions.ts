@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { Cart, CheckoutSettings, ShippingMethod } from '../models';
+import { Cart, CheckoutSettings, ShippingMethod, ShippingInfo } from '../models';
 
 @Injectable()
 
@@ -60,6 +60,21 @@ export class CheckoutActions {
 
   }
 
+  static LOAD_CART_ITEMS = '[Cart] Load Cart Items';
+  loadCartItems(): Action {
+    return {
+      type: CheckoutActions.LOAD_CART_ITEMS
+    }
+  }
+
+  static LOAD_CART_ITEMS_SUCCESS = '[Cart] Load Cart Items Success';
+  loadCartItemsSuccess(Items: Cart): Action {
+    return {
+      type: CheckoutActions.LOAD_CART_ITEMS_SUCCESS,
+      payload: Items
+    }
+  }
+
   static LOAD_SHIPPING_METHOD = 'Load Shipping Method';
   loadShippingMethod(): Action {
     return {
@@ -76,5 +91,33 @@ export class CheckoutActions {
 
   }
 
-  static LOAD_
+  static LOAD_SHIPPING_ADDRESS = '[ShippingInfo] Load Shipping Address';
+  loadShippingAddress(): Action {
+    return {
+      type: CheckoutActions.LOAD_SHIPPING_ADDRESS
+    }
+  }
+
+  static LOAD_SHIPPING_ADDRESS_SUCCESS = '[ShippingInfo] Load Shipping Address Success';
+  loadShippingAddressSuccess(ShippingAddress: ShippingInfo): Action {
+    return {
+      type: CheckoutActions.LOAD_SHIPPING_ADDRESS_SUCCESS,
+      payload: ShippingAddress
+    }
+  }
+
+  static LOAD_BILLING_ADDRESS = 'Load Billing Address';
+  loadBillingAddress(): Action {
+    return {
+      type: CheckoutActions.LOAD_BILLING_ADDRESS
+    }
+  }
+
+  static LOAD_BILLING_ADDRESS_SUCCESS = 'Load Billing Address Success';
+  loadBillingAddressSuccess(BillingAddress): Action {
+    return {
+      type: CheckoutActions.LOAD_BILLING_ADDRESS_SUCCESS,
+      payload: BillingAddress
+    }
+  }
 }
