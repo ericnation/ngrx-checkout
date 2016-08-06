@@ -109,6 +109,30 @@ export class CheckoutProgressActions {
     }
   }
 
+  static SUBMIT_BILLING_ADDRESS = 'Save Billing Address';
+  saveBillingAddress(billingAddress): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_BILLING_ADDRESS,
+      payload: billingAddress
+    }
+  }
+
+  static SUBMIT_BILLING_ADDRESS_SUCCESS = 'Save Billing Address Success';
+  saveBillingAddressSuccess(billingAddress): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_BILLING_ADDRESS_SUCCESS,
+      payload: billingAddress
+    }
+  }
+
+  static SUBMIT_BILLING_ADDRESS_FAIL = 'Save Billing Address Fail';
+  saveBillingAddressFail(billingAddress): Action {
+    return {
+      type: CheckoutProgressActions.SUBMIT_BILLING_ADDRESS_FAIL,
+      payload: billingAddress
+    }
+  }
+
   static PLACE_ORDER = 'Place Order';
   placeOrder(cart): Action {
     return {

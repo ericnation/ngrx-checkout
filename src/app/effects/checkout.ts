@@ -59,4 +59,10 @@ export class CheckoutEffects {
       .map(update => update.action.payload)
       .switchMap(paymentInfo => this.service.savePaymentInfo(paymentInfo))
       .map(paymentInfo => this.checkoutProgressActions.submitPaymentSuccess(paymentInfo));
+
+  @Effect() saveBillingAddress$ = this.update$
+      .whenAction(CheckoutProgressActions.SUBMIT_BILLING_ADDRESS)
+      .map(update => update.action.payload)
+      .switchMap(billingAddress => this.service.saveBillingAddress(billingAddress))
+      .map(billingAddress => this.checkoutProgressActions.saveBillingAddressSuccess(billingAddress));
 }

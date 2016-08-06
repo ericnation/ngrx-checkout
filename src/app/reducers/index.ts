@@ -46,6 +46,7 @@ import shippingMethodsReducer, * as fromShippingMethods from './shipping-methods
 import shippingMethodReducer, * as fromShippingMethod from './shipping-method';
 import cartItemsReducer, * as fromCartItems from './cart-items';
 import shippingAddressReducer, * as fromShippingAddress from './shipping-address';
+import billingAddressReducer, * as fromBillingAddress from './billing-address';
 
 
 /**
@@ -60,7 +61,8 @@ export interface AppState {
   shippingMethods: fromShippingMethods.ShippingMethodsState,
   shippingMethod: fromShippingMethod.ShippingMethodState,
   cartItems: fromCartItems.CartItemsState,
-  shippingAddress: fromShippingAddress.ShippingAddressState
+  shippingAddress: fromShippingAddress.ShippingAddressState,
+  billingAddress: fromBillingAddress.BillingAddressState
 }
 
 /**
@@ -78,5 +80,6 @@ export default compose(storeLogger(), combineReducers)({
   shippingMethods: shippingMethodsReducer,
   shippingMethod: shippingMethodReducer,
   cartItems: cartItemsReducer,
-  shippingAddress: shippingAddressReducer
+  shippingAddress: shippingAddressReducer,
+  billingAddress: billingAddressReducer
 })

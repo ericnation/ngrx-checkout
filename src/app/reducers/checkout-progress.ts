@@ -48,7 +48,7 @@ export default function(state = initialState, action: Action): CheckoutProgressS
       });
     }
 
-    case CheckoutProgressActions.SUBMIT_PAYMENT_SUCCESS: {
+    case CheckoutProgressActions.SUBMIT_PAYMENT_INFO_SUCCESS: {
       return Object.assign({}, state, {
         billingActive: false,
         billingComplete: true,

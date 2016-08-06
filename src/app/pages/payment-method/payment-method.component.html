@@ -1,7 +1,8 @@
 <div class="card page-card">
-  <form #paymentForm="ngForm" (ngSubmit)="submitPayment(paymentForm)">
+  <form #paymentForm="ngForm">
     <div class="card-block">
       <h4 class="card-title">Enter Payment Information</h4>
+      <p class="paragraph-text required-text"><span class="text-danger">*</span> = Required Field</p>
       <div class="credit-card-form-wrap">
         <div class="form-group cardnumber-col">
           <label for="CardNumber" class="input-label"
@@ -110,18 +111,23 @@
       <p class="paragraph-text m-y-1"><span class="fa fa-lock"></span>
         All tranactions are secure and encrypted. Credit card information is never stored.
       </p>
+      <h4 class="m-y-1">Billing Address</h4>
 
-      <!--<div class="form-group">-->
-        <!--<label for="sameAsShippingAddress">Same As Shipping Address?-->
-          <!--<input type="checkbox" name="sameAsShippingAddress" id="sameAsShippingAddress" value="" class="form-control" [(ngModel)]="">-->
-        <!--</label>-->
-      <!--</div>-->
 
-      <form #billingAddressForm="ngForm" (ngSubmit)="saveBillingAddress(billingAddressForm)" *ngIf="!sameAsShippingAddress">
-        <div class="card-block">
-          <h4 class="card-title">Shipping Info</h4>
-          <p class="paragraph-text required-text"><span class="text-danger">*</span> = Required Field</p>
-
+      <div class="form-check">
+        <label for="sameAsShippingAddress" class="form-check-label">
+          <input type="checkbox"
+                 name="sameAsShippingAddress"
+                 id="sameAsShippingAddress"
+                 value=""
+                 [checked]="true"
+                 class="form-check-input"
+                 (ngModelChange)="sameAsShippingAddress.selected"
+                 [(ngModel)]="sameAsShippingAddress.selected">
+          Same As Shipping Address?
+        </label>
+      </div>
+      <form #billingAddressForm="ngForm" (ngSubmit)="saveBillingAddress(billingAddressForm)" *ngIf="!sameAsShippingAddress.selected">
 
           <div class="form-row clearfix">
             <div class="form-col-6">
@@ -229,7 +235,7 @@
               </div>
             </div>
           </div>
-        </div>
+        <button type="submit" class="hidden-btn" id="saveBillingAddressBtn">Save Billing Address</button>
       </form>
 
     </div>
@@ -245,9 +251,10 @@
           </a>
         </div>
         <div class="col-sm-12 col-md-6">
-          <button type="submit"
+          <button type="button"
                   class="btn btn-primary next-step-btn pull-sm-right"
-                  id="reviewOrderBtn">
+                  id="reviewOrderBtn"
+                  (click)="submitPayment(paymentForm)">
             Review Order
           </button>
         </div>

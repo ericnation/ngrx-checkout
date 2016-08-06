@@ -78,3 +78,10 @@
     float: none;
   }
 }
+
+.hidden-btn {
+  opacity: 0;
+  margin-left: -9999px;
+  width: 1px;
+  height: 1px;
+}

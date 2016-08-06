@@ -58,14 +58,14 @@
             <a class="pull-xs-right edit-link" (click)="backToPaymentInfo()" id="editPaymentMethodLink">Edit</a>
           </div>
           <div class="review-section-content">
-            <!--<address class="m-b-2" id="billingAddressInfo" *ngIf="billingAddress.Street1.length > 0 && billingAddress.State?.length > 0">-->
-              <!--<strong class="m-b-half">Bill to:</strong><br>-->
-              <!--{{billingAddress.FirstName}} {{billingAddress.LastName}} <br/>-->
-              <!--<span *ngIf="billingAddress.CompanyName !== null">{{billingAddress.CompanyName}}<br></span>-->
-              <!--{{billingAddress.Street1}} <br>-->
-              <!--{{billingAddress.City}}, {{billingAddress.State}}, {{billingAddress.PostCode}} <br>-->
-              <!--{{billingAddress.Phone}}-->
-             <!--</address>-->
+            <address class="m-b-2" id="billingAddressInfo" *ngIf="billingAddress.Street1.length > 0 && billingAddress.State?.length > 0">
+              <strong class="m-b-half">Bill to:</strong><br>
+              {{billingAddress.FirstName}} {{billingAddress.LastName}} <br/>
+              <span *ngIf="billingAddress.CompanyName !== null">{{billingAddress.CompanyName}}<br></span>
+              {{billingAddress.Street1}} <br>
+              {{billingAddress.City}}, {{billingAddress.State}}, {{billingAddress.PostCode}} <br>
+              {{billingAddress.Phone}}
+             </address>
             <dl>
               <dt class="m-b-half">Payment Method</dt>
               <dd>

@@ -106,18 +106,4 @@ export class CheckoutActions {
     }
   }
 
-  static LOAD_BILLING_ADDRESS = 'Load Billing Address';
-  loadBillingAddress(): Action {
-    return {
-      type: CheckoutActions.LOAD_BILLING_ADDRESS
-    }
-  }
-
-  static LOAD_BILLING_ADDRESS_SUCCESS = 'Load Billing Address Success';
-  loadBillingAddressSuccess(BillingAddress): Action {
-    return {
-      type: CheckoutActions.LOAD_BILLING_ADDRESS_SUCCESS,
-      payload: BillingAddress
-    }
-  }
 }

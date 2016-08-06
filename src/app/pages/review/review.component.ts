@@ -17,7 +17,7 @@ export class ReviewComponent implements OnInit, OnDestroy {
   private subscription;
   items;
   shippingAddress;
-  //billingAddress;
+  billingAddress;
   shippingMethod;
 
   constructor(
@@ -47,10 +47,10 @@ export class ReviewComponent implements OnInit, OnDestroy {
             this.shippingAddress = shippingAddress['shippingAddress'];
           });
 
-      // this.subscription = store.select('billingAddress')
-      //     .subscribe(billingAddress => {
-      //       this.billingAddress = billingAddress['billingAddress'];
-      //     });
+      this.subscription = store.select('billingAddress')
+          .subscribe(billingAddress => {
+            this.billingAddress = billingAddress['billingAddress'];
+          });
 
       this.subscription = store.select('shippingMethod')
           .subscribe(shippingMethod => {
