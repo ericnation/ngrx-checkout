@@ -1,0 +1,116 @@
+@import "../../../app/assets/styles/tools/mixins";
+@import "../../../app/assets/styles/settings/variables";
+@import "../../../app/assets/styles/settings/color-palette";
+
+
+.checkout-step-col {
+  width:100%;
+}
+
+.button-row button {
+  margin:0.25rem;
+
+  @include apply-to("max-width", 420px) {
+    display: block;
+    margin: 7px auto;
+    width: 90%;
+  }
+
+  @include apply-to("max-width", 380px) {
+    width: 100%;
+  }
+}
+
+.btn-print {
+  padding-left: 2.8rem;
+
+  @include apply-to("max-width", 420px) {
+    padding-left: 1.3rem;
+  }
+
+  .ink-icon-printer {
+    font-size: 1.3em;
+    left: 14px;
+    position: absolute;
+    top: 6px;
+
+    @include apply-to("max-width", 420px) {
+      left: 0;
+      padding-right: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+.card-header--success {
+  padding: 1.5rem;
+
+  @include apply-to("max-width", 420px) {
+    margin: 1.5rem;
+    padding: 1rem;
+
+    h3 {
+      @include font-size(20px);
+    }
+
+    .sub-card-title {
+      display: block;
+      margin-top: 3px;
+    }
+  }
+}
+
+.confirmation-break {
+  margin:25px 0;
+}
+
+.fa-check {
+  font-size: 3rem;
+  margin-right: 1rem;
+
+  @include apply-to("max-width", 420px) {
+    display: block;
+    margin-right: 0;
+  }
+}
+
+.card-block__thank-you {
+  margin: 0 auto;
+  width: 70%;
+
+  @include apply-to("max-width", 800px) {
+    width: 80%;
+  }
+
+  @include apply-to("max-width", 709px) {
+    width: 100%;
+  }
+}
+
+.dl-group {
+  width: 100%;
+}
+
+.def-group {
+  width: 100%;
+
+  @include apply-to("min-width",650px) {
+    @include font-size(18px);
+  }
+}
+
+dd {
+  margin-bottom: 0;
+}
+
+.def-term {
+  float: left;
+  margin-right: 10px;
+  text-align: right;
+  width: 54%;
+}
+
+.def-desc {
+  float: left;
+}

@@ -74,4 +74,9 @@ export class CheckoutServices {
         .map(res => res.json());
   }
 
+  placeOrder(cart): Observable<Cart> {
+    return this.http.patch('http://localhost:3000/api/Cart/', JSON.stringify(cart), HEADER)
+        .map(res => res.json());
+  }
+
 }

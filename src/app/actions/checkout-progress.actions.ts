@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
+import { Cart} from '../models/cart/Cart';
+import { PaymentInfo } from '../models/payment-info';
+import { ShippingMethod } from '../models/cart/ShippingMethod';
+import { ShippingInfo } from '../models/shipping-info';
+import { OrderInfo } from '../models/order-info';
 
 @Injectable()
 
@@ -14,7 +19,7 @@ import { Action } from '@ngrx/store';
 export class CheckoutProgressActions {
 
   static SUBMIT_ORDER_INFO = 'Submit Order Info';
-  submitOrderInfo(orderinfo): Action {
+  submitOrderInfo(orderinfo: OrderInfo): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_ORDER_INFO,
       payload: orderinfo
@@ -22,7 +27,7 @@ export class CheckoutProgressActions {
   }
 
   static SUBMIT_ORDER_INFO_SUCCESS = 'Submit Order Info Success';
-  submitOrderInfoSucess(orderinfo): Action {
+  submitOrderInfoSucess(orderinfo: OrderInfo): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_ORDER_INFO_SUCCESS,
       payload: orderinfo
@@ -30,7 +35,7 @@ export class CheckoutProgressActions {
   }
 
   static SUBMIT_ORDER_INFO_FAIL = 'Submit Order Info Fail';
-  submitOrderInfoFail(orderinfo): Action {
+  submitOrderInfoFail(orderinfo: OrderInfo): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_ORDER_INFO_FAIL,
       payload: orderinfo
@@ -38,7 +43,7 @@ export class CheckoutProgressActions {
   }
 
   static SUBMIT_SHIPPING_ADDRESS = 'Submit Shipping Address';
-  submitShippingAddress(shippingAddress): Action {
+  submitShippingAddress(shippingAddress: ShippingInfo): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_SHIPPING_ADDRESS,
       payload: shippingAddress
@@ -46,7 +51,7 @@ export class CheckoutProgressActions {
   }
 
   static SUBMIT_SHIPPING_ADDRESS_SUCCESS = 'Submit Shipping Address Success';
-  submitShippingAddressSuccess(shippingAddress): Action {
+  submitShippingAddressSuccess(shippingAddress: ShippingInfo): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_SHIPPING_ADDRESS_SUCCESS,
       payload: shippingAddress
@@ -54,7 +59,7 @@ export class CheckoutProgressActions {
   }
 
   static SUBMIT_SHIPPING_ADDRESS_FAIL = 'Submit Shipping Address Fail';
-  submitShippingAddressFail(shippingAddress): Action {
+  submitShippingAddressFail(shippingAddress: ShippingMethod): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_SHIPPING_ADDRESS_FAIL,
       payload: shippingAddress
@@ -62,7 +67,7 @@ export class CheckoutProgressActions {
   }
 
   static  SUBMIT_SHIPPING_METHOD = 'Submit Shipping Method';
-  submitShippingMethod(shippingMethod): Action {
+  submitShippingMethod(shippingMethod: ShippingMethod): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_SHIPPING_METHOD,
       payload: shippingMethod
@@ -70,7 +75,7 @@ export class CheckoutProgressActions {
   }
 
   static  SUBMIT_SHIPPING_METHOD_SUCCESS = 'Submit Shipping Method Success';
-  submitShippingMethodSuccess(shippingMethod): Action {
+  submitShippingMethodSuccess(shippingMethod: ShippingMethod): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_SHIPPING_METHOD_SUCCESS,
       payload: shippingMethod
@@ -86,7 +91,7 @@ export class CheckoutProgressActions {
   }
 
   static SUBMIT_PAYMENT_INFO = 'Submit Payment Info';
-  submitPayment(paymentInfo): Action {
+  submitPayment(paymentInfo: PaymentInfo): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_PAYMENT_INFO,
       payload: paymentInfo
@@ -94,7 +99,7 @@ export class CheckoutProgressActions {
   }
 
   static SUBMIT_PAYMENT_INFO_SUCCESS = 'Submit Payment Info Success';
-  submitPaymentSuccess(paymentInfo): Action {
+  submitPaymentSuccess(paymentInfo: PaymentInfo): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_PAYMENT_INFO_SUCCESS,
       payload: paymentInfo
@@ -102,7 +107,7 @@ export class CheckoutProgressActions {
   }
 
   static SUBMIT_PAYMENT_INFO_FAIL = 'Submit Payment Info Fail';
-  submitPaymentFail(paymentInfo): Action {
+  submitPaymentFail(paymentInfo: PaymentInfo): Action {
     return {
       type: CheckoutProgressActions.SUBMIT_PAYMENT_INFO_FAIL,
       payload: paymentInfo
@@ -134,7 +139,7 @@ export class CheckoutProgressActions {
   }
 
   static PLACE_ORDER = 'Place Order';
-  placeOrder(cart): Action {
+  placeOrder(cart: Cart): Action {
     return {
       type: CheckoutProgressActions.PLACE_ORDER,
       payload: cart
@@ -142,7 +147,7 @@ export class CheckoutProgressActions {
   }
 
   static PLACE_ORDER_SUCCESS = 'Place Order Success';
-  placeOrderSuccess(cart): Action {
+  placeOrderSuccess(cart: Cart): Action {
     return {
       type: CheckoutProgressActions.PLACE_ORDER_SUCCESS,
       payload: cart
@@ -150,7 +155,7 @@ export class CheckoutProgressActions {
   }
 
   static PLACE_ORDER_FAIL = 'Place Order Fail';
-  placeOrderFail(cart): Action {
+  placeOrderFail(cart: Cart): Action {
     return {
       type: CheckoutProgressActions.PLACE_ORDER_FAIL,
       payload: cart

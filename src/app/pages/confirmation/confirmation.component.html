@@ -1,3 +1,32 @@
-<p>
-  confirmation works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card card--success m-t-2">
+      <div class="card-header--success">
+        <h3 class="text-centered green font-weight-normal m-a-half">
+          <i class="fa fa-check text-middle"></i><b>Thank you!</b> <span class="sub-card-title">Your order has been placed.</span>
+        </h3>
+      </div>
+      <div class="card-block__thank-you center-block p-a-2">
+        <dl class="dl-group m-y-1">
+          <div class="def-group clearfix">
+            <dt class="def-term"><b>Order Number:</b></dt>
+            <dd class="def-desc"><b>546468468</b></dd>
+          </div>
+          <div class="def-group clearfix">
+            <dt class="def-term font-weight-normal">Total Amount:</dt>
+            <dd class="def-desc">{{cart?.TotalDue | currency:currencyCode:true:'1.2-2'}}</dd>
+          </div>
+        </dl>
+        <hr class="confirmation-break">
+
+        <p class="m-b-2 text-sm-center">An email confirmation has been sent to <b>{{cart.GuestEmail}}.</b> If you have any questions or if you need to make a change contact us at
+          <a href="tel:{{checkoutSettings?.PhoneNumber}}">{{checkoutSettings?.PhoneNumber}}</a> or email at <a href="email:{{checkoutSettings?.ContactEmail}}">{{checkoutSettings?.ContactEmail}}</a>
+        </p>
+        <div class="text-centered button-row">
+          <a class="btn btn-secondary" (click)="goBackToStore()">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

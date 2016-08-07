@@ -83,7 +83,9 @@ export class ReviewComponent implements OnInit, OnDestroy {
   }
 
   placeOrder() {
-
+    console.log(this.cart);
+    this.store.dispatch(this.checkoutProgressActions.placeOrder(this.cart));
+    this.router.go('/confirmation')
   }
 
   ngOnDestroy(){

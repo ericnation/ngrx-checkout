@@ -3,6 +3,7 @@ import 'rxjs/add/operator/map';
 import { Action } from '@ngrx/store';
 
 import { CheckoutActions } from '../actions/checkout-actions';
+import {CheckoutProgressActions} from "../actions/checkout-progress.actions";
 
 
 export interface CartState {
@@ -34,6 +35,16 @@ export default function(state = initialState, action: Action): CartState {
         cart: cart
       }
     }
+
+    case CheckoutProgressActions.PLACE_ORDER_SUCCESS: {
+      const cart = action.payload;
+      return {
+        loaded: true,
+        loading: false,
+        cart: cart
+      }
+    }
+
     default: {
       return state;
     }

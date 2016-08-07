@@ -1,15 +1,19 @@
 <header [checkout]="checkoutSettings | async"></header>
 <div class="container">
-  <div class="row">
+  <div class="row" *ngIf="!checkoutProgress.checkoutComplete">
     <div class="col-xs-12 col-md-9">
-      <progress-nav [checkoutProgress]="checkoutProgress | async"></progress-nav>
+      <progress-nav [checkoutProgress]="checkoutProgress"></progress-nav>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-7 col-md-9">
+    <div class="col-xs-12 col-sm-7"
+         [ngClass]="{
+         'checkout-step-col': checkoutProgress.checkoutComplete,
+         'col-md-9': !checkoutProgress.checkoutComplete
+         }">
       <route-view></route-view>
     </div>
-    <div class="col-xs-12 col-sm-5 col-md-3">
+    <div class="col-xs-12 col-sm-5 col-md-3" *ngIf="!checkoutProgress.checkoutComplete">
       <order-summary [cart]="cart | async"></order-summary>
     </div>
   </div>

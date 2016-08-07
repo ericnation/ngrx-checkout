@@ -65,4 +65,10 @@ export class CheckoutEffects {
       .map(update => update.action.payload)
       .switchMap(billingAddress => this.service.saveBillingAddress(billingAddress))
       .map(billingAddress => this.checkoutProgressActions.saveBillingAddressSuccess(billingAddress));
+
+  @Effect() placeOrder$ = this.update$
+      .whenAction(CheckoutProgressActions.PLACE_ORDER)
+      .map(update => update.action.payload)
+      .switchMap(cart => this.service.placeOrder(cart))
+      .map(cart => this.checkoutProgressActions.placeOrderSuccess(cart));
 }
